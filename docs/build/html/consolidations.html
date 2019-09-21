@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Consolidations &mdash; managealooma 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Events" href="events.html" />
+    <link rel="prev" title="Column DDL" href="column_ddl.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> managealooma
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="column_ddl.html">Column DDL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Consolidations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-schedule-queries">Get Schedule Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scheduled-query-table">Scheduled Query Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-consolidation">Create Consolidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-scheduled-query-for-event">Get Scheduled Query For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-schedule-query-for-event">View Schedule Query For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-schedule-query">Remove Schedule Query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-scheduled-query-for-event">Remove Scheduled Query For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-scheduled-query-frequency-for-event">Change Scheduled Query Frequency For Event</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mappings.html">Mappings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Secrets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_functions.html">Transformation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_test.html">Transformation Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">managealooma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Consolidations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/consolidations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="consolidations">
+<h1>Consolidations<a class="headerlink" href="#consolidations" title="Permalink to this headline">¶</a></h1>
+<p>Consolidations take the new data that’s been inserted into the temporary _log table and combine it into the main table.  The terms consolidation query and scheduled queries can be used interchangeably.</p>
+<span class="target" id="managealooma-init"></span><dl class="method">
+<dt id="managealooma.consolidations.Consolidations.__init__">
+<code class="descclassname">Consolidations.</code><code class="descname">__init__</code><span class="sig-paren">(</span><em>api</em>, <em>preview_changes=True</em>, <em>apply_changes=False</em>, <em>pprint_indent=2</em>, <em>pprint_width=250</em>, <em>pprint_depth=5</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Consolidations are Alooma’s way of making sure only the most recent row for each table appears in the main table.</dt>
+<dd>Consolidation management the v2 API.  The class is initiated with the following variables:</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>api</strong> – The Alooma API client authentication</li>
+<li><strong>preview_changes</strong> – Prints the consolidation or consolidations changes if True</li>
+<li><strong>apply_changes</strong> – Executes the consolidation changes if True</li>
+<li><strong>pprint_indent</strong> – The indent value to pprint dictionaries</li>
+<li><strong>pprint_width</strong> – The width value to pprint dictionaries</li>
+<li><strong>pprint_depth</strong> – The depth value to pprint dictionaries</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="get-schedule-queries">
+<h2>Get Schedule Queries<a class="headerlink" href="#get-schedule-queries" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="get-scheduled-queries"></span><dl class="method">
+<dt id="managealooma.consolidations.Consolidations.get_scheduled_queries">
+<code class="descclassname">Consolidations.</code><code class="descname">get_scheduled_queries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.get_scheduled_queries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the list of scheduled queries from Alooma</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The JSON response with all of the scheduled queries</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="scheduled-query-table">
+<h2>Scheduled Query Table<a class="headerlink" href="#scheduled-query-table" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="schedule-query-table"></span><dl class="method">
+<dt id="managealooma.consolidations.Consolidations.scheduled_query_table">
+<code class="descclassname">Consolidations.</code><code class="descname">scheduled_query_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.scheduled_query_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a list of the consolidation queries running in Alooma. Prints the information in a dataframe if the class preview_changes flag is True.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dataframe with the information on the scheduled queries</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="create-consolidation">
+<h2>Create Consolidation<a class="headerlink" href="#create-consolidation" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id1"></span><dl class="method">
+<dt id="managealooma.consolidations.Consolidations.create_consolidation">
+<code class="descclassname">Consolidations.</code><code class="descname">create_consolidation</code><span class="sig-paren">(</span><em>event_name</em>, <em>cron_schedule='*/15 * * * *'</em>, <em>custom_variables=False</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.create_consolidation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Consolidation Given Configuration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event_name</strong> – The event type for which to create the consolidation</li>
+<li><strong>cron_schedule</strong> – The cron schedule on which to run the schedule query. Default is 15 minutes.</li>
+<li><strong>custom_variables</strong> – custom variables to add to consolidation. For consolidations from database tables set custom variables to None. For consolidations for all other tables the recommended customer variable settings are custom_variables = {“all_ri_fields”: [“_metadata.&#64;timestamp”], “ri_field”: “_metadata.&#64;timestamp”, “ri_column”: “_metadata.&#64;timestamp”}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-scheduled-query-for-event">
+<h2>Get Scheduled Query For Event<a class="headerlink" href="#get-scheduled-query-for-event" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id2"></span><dl class="method">
+<dt id="managealooma.consolidations.Consolidations.get_scheduled_query_for_event">
+<code class="descclassname">Consolidations.</code><code class="descname">get_scheduled_query_for_event</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.get_scheduled_query_for_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the scheduled query for a specific event</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_name</strong> – The name of the event for which to retrieve the schedule query</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns the schedule query</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="view-schedule-query-for-event">
+<h2>View Schedule Query For Event<a class="headerlink" href="#view-schedule-query-for-event" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="managealooma.consolidations.Consolidations.view_schedule_query_for_event">
+<code class="descclassname">Consolidations.</code><code class="descname">view_schedule_query_for_event</code><span class="sig-paren">(</span><em>event_name</em>, <em>show_configuration_only=True</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.view_schedule_query_for_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the scheduled query for an event when</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event_name</strong> – The event to view a scheduled query for</li>
+<li><strong>show_configuration_only</strong> – Print the configuration only without the query</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The scheduled query</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="remove-schedule-query">
+<h2>Remove Schedule Query<a class="headerlink" href="#remove-schedule-query" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="remove-scheduled-query"></span><dl class="method">
+<dt id="managealooma.consolidations.Consolidations.remove_scheduled_query">
+<code class="descclassname">Consolidations.</code><code class="descname">remove_scheduled_query</code><span class="sig-paren">(</span><em>schquery</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.remove_scheduled_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the scheduled query for a specific ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>schquery</strong> – the ID of a schedule query to remove</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="remove-scheduled-query-for-event">
+<h2>Remove Scheduled Query For Event<a class="headerlink" href="#remove-scheduled-query-for-event" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id3"></span><dl class="method">
+<dt id="managealooma.consolidations.Consolidations.remove_scheduled_query_for_event">
+<code class="descclassname">Consolidations.</code><code class="descname">remove_scheduled_query_for_event</code><span class="sig-paren">(</span><em>event_name</em>, <em>show_configuration_only=True</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.remove_scheduled_query_for_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the scheuled query for an event</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event_name</strong> – The name of the event for which to remove the consolidation</li>
+<li><strong>print_consolidations</strong> – print the current consolidation</li>
+<li><strong>show_configuration_only</strong> – Print the configuration only without the query</li>
+<li><strong>apply_change</strong> – apply the remove consolidation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="change-scheduled-query-frequency-for-event">
+<h2>Change Scheduled Query Frequency For Event<a class="headerlink" href="#change-scheduled-query-frequency-for-event" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id4"></span><dl class="method">
+<dt id="managealooma.consolidations.Consolidations.change_scheduled_query_frequency_for_event">
+<code class="descclassname">Consolidations.</code><code class="descname">change_scheduled_query_frequency_for_event</code><span class="sig-paren">(</span><em>event_name</em>, <em>cron_schedule='*/15 * * * *'</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.consolidations.Consolidations.change_scheduled_query_frequency_for_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the frequency of the scheduled query</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event_name</strong> – he name of the event for which to remove the consolidation</li>
+<li><strong>cron_schedule</strong> – The new cron schedule to set for the event</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="events.html" class="btn btn-neutral float-right" title="Events" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="column_ddl.html" class="btn btn-neutral float-left" title="Column DDL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jay Rosenthal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1033 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mappings &mdash; managealooma 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Samples" href="samples.html" />
+    <link rel="prev" title="Inputs" href="inputs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> managealooma
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="column_ddl.html">Column DDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consolidations.html">Consolidations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mappings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-mapping-for-event">Get Mapping For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Get Mapping For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-mapping-mode">Change Mapping Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-mapping-consolidation-settings">Change Mapping Consolidation Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-mapping-consolidation-key">Change Mapping Consolidation Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-mapping-to-use-log">Change Mapping to Use Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-mapping-for-manual-consolidation-creation">Change Mapping for Manual Consolidation Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-field-from-mapping">Delete Field From Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-field-mapping-settings">Change Field Mapping Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-field-varchar-length">Change Field Varchar Length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-field-null-constraint">Change Field Null Constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-consolidation-uses-log">Check Consolidation Uses Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copy-mapping">Copy Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-mapping-from-existing-mapping">Set Mapping from Existing Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-field-to-mapping">Add Field To Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preview-mapping-changes">Preview Mapping Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apply-mapping-changes">Apply Mapping Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-unmapped-fields-and-clear-table-stats">Remove Unmapped Fields and Clear Table Stats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Secrets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_functions.html">Transformation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_test.html">Transformation Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">managealooma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Mappings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mappings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-managealooma.mappings"></span><div class="section" id="mappings">
+<h1>Mappings<a class="headerlink" href="#mappings" title="Permalink to this headline">¶</a></h1>
+<p>Mappings are the conversion of a dictionary to a flattened table structure. The mapping class allows you to perform operations to view and alter the settings for a single event type.</p>
+<span class="target" id="mappings-init"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.__init__">
+<code class="descclassname">Mappings.</code><code class="descname">__init__</code><span class="sig-paren">(</span><em>api</em>, <em>event_name</em>, <em>preview_full=True</em>, <em>preview_changes=True</em>, <em>apply_changes=False</em>, <em>pprint_indent=2</em>, <em>pprint_width=250</em>, <em>pprint_depth=5</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>View and change Alooma mappings. Mappings are the conversion of a dictionary to a flattened table structure.
+The class is initiated with the following variables:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>api</strong> – The Alooma API client authentication</li>
+<li><strong>event_name</strong> – The name of the event to view or change settings for</li>
+<li><strong>preview_full</strong> – Prints the mapping or mapping changes if True</li>
+<li><strong>preview_changes</strong> – Prints the changes in the mapping by category if True</li>
+<li><strong>apply_changes</strong> – Executes the mapping changes if True</li>
+<li><strong>pprint_indent</strong> – The indent value to pprint dictionaries</li>
+<li><strong>pprint_width</strong> – The width value to pprint dictionaries</li>
+<li><strong>pprint_depth</strong> – The depth value to pprint dictionaries</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="get-mapping-for-event">
+<h2>Get Mapping For Event<a class="headerlink" href="#get-mapping-for-event" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id1"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.get_mapping_for_event">
+<code class="descclassname">managealooma.mappings.Mappings.</code><code class="descname">get_mapping_for_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.get_mapping_for_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the mapping for the event name that the class was initialized with</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a dictionary with the mapping</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>Get Mapping For Event<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="view-mapping"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.view_mapping">
+<code class="descclassname">Mappings.</code><code class="descname">view_mapping</code><span class="sig-paren">(</span><em>view_field_mappings=False</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.view_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the mapping for an event and allows printing with or with the field details</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>view_field_mappings</strong> – Hides the field details when set to false. Useful for quick view of consolidation and mapping details without all the fields</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns the mapping dictionary the user viewed</td>
+</tr>
+</tbody>
+</table>
+<p>Sample Mapping printed with view_field_mappings=False.  The mapping[‘fields’] key with the list of fields IS NOT printed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;autoMappingError&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+ <span class="s1">&#39;consolidation&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+ <span class="s1">&#39;inputObjects&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;12345-asdfg&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;98765-zxcvb&#39;</span><span class="p">]},</span>
+ <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE_LOG&#39;</span><span class="p">},</span>
+  <span class="s1">&#39;mappingMode&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTO_MAP&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA.MY_TABLE&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;origInputLabel&#39;</span><span class="p">:</span> <span class="s1">&#39;production_database&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;schemaUrls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;schema?id=12345-asdfg&amp;schema_object=my_table&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;schema?id=d=12345-asdfg&amp;sschema_object=deleted_rows&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;MAPPED&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;usingDefaultMappingMode&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample Mapping printed with view_field_mappings=True. The mapping[‘fields’] key with the list of fields IS printed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;autoMappingError&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+ <span class="s1">&#39;consolidation&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+  <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;ID&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                              <span class="s1">&#39;precision&#39;</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
+                              <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                              <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;NUMERIC&#39;</span><span class="p">},</span>
+                              <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                              <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                              <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}},</span>
+              <span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mi">16777216</span><span class="p">,</span>
+                              <span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                              <span class="s1">&#39;truncate&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                              <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">},</span>
+              <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+              <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+              <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+              <span class="p">],</span>
+ <span class="s1">&#39;inputObjects&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;12345-asdfg&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;98765-zxcvb&#39;</span><span class="p">]},</span>
+ <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE_LOG&#39;</span><span class="p">},</span>
+  <span class="s1">&#39;mappingMode&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTO_MAP&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA.MY_TABLE&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;origInputLabel&#39;</span><span class="p">:</span> <span class="s1">&#39;production_database&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;schemaUrls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;schema?id=12345-asdfg&amp;schema_object=my_table&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;schema?id=d=12345-asdfg&amp;sschema_object=deleted_rows&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;MAPPED&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;usingDefaultMappingMode&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="change-mapping-mode">
+<h2>Change Mapping Mode<a class="headerlink" href="#change-mapping-mode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="managealooma.mappings.Mappings.change_mapping_mode">
+<code class="descclassname">managealooma.mappings.Mappings.</code><code class="descname">change_mapping_mode</code><span class="sig-paren">(</span><em>self</em>, <em>new_mapping_mode='STRICT'</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.change_mapping_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the mapping mode. Alooma has 3 modes of AUTO_MAP, STRICT, and FLEXIBLE. We only use AUTO_MAP or STRICT</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>new_mapping_mode</strong> – The new mapping mode to set: AUTO_MAP, STRICT, and FLEXIBLE</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The altered mapping</td>
+</tr>
+</tbody>
+</table>
+<p>The mapping settings keys and sample values</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;autoMappingError&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+<span class="s1">&#39;mappingMode&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+<span class="s1">&#39;usingDefaultMappingMode&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The mapping mode with the specified new mappingMode to alter</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;autoMappingError&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+<span class="s1">&#39;mappingMode&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTO_MAP&#39;</span><span class="p">,</span>
+<span class="s1">&#39;usingDefaultMappingMode&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="change-mapping-consolidation-settings">
+<h2>Change Mapping Consolidation Settings<a class="headerlink" href="#change-mapping-consolidation-settings" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="change-consolidation-settings"></span><dl class="function">
+<dt id="managealooma.mappings.Mappings.change_mapping_consolidation_settings">
+<code class="descclassname">managealooma.mappings.Mappings.</code><code class="descname">change_mapping_consolidation_settings</code><span class="sig-paren">(</span><em>self</em>, <em>consolidation_schema</em>, <em>consolidation_table_name</em>, <em>consolidation_keys</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.change_mapping_consolidation_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the consolidation information for an event</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>consolidation_schema</strong> – The schema of consolidated table</li>
+<li><strong>consolidation_table_name</strong> – The name of the consolidated table</li>
+<li><strong>consolidation_keys</strong> – The consolidation keys (primary key) for the table. Takes a single field or a list</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The altered mapping</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The old consolidation settings</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA_TEMP&#39;</span><span class="p">,</span>
+<span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;NY_TABLE_ITEMS&#39;</span><span class="p">,</span>
+<span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;IDENTIFIER&#39;</span><span class="p">],</span>
+<span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The new consolidation settings to apply</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+<span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+<span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span>
+<span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="change-mapping-consolidation-key">
+<h2>Change Mapping Consolidation Key<a class="headerlink" href="#change-mapping-consolidation-key" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id3"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.change_mapping_consolidation_key">
+<code class="descclassname">Mappings.</code><code class="descname">change_mapping_consolidation_key</code><span class="sig-paren">(</span><em>new_consolidation_key</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.change_mapping_consolidation_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the conolidation key only</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>new_consolidation_key</strong> – The new consolidation key. This is the primary key for the table.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The altered mapping</td>
+</tr>
+</tbody>
+</table>
+<p>The consolidation key is set to the field name ID when tables are auto-mapped</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+<span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+<span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span>
+<span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This example will change the key to a field named IDENTIFIER</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+<span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+<span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;IDENTIFIER&#39;</span><span class="p">],</span>
+<span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="change-mapping-to-use-log">
+<h2>Change Mapping to Use Log<a class="headerlink" href="#change-mapping-to-use-log" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id4"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.change_mapping_to_use_log">
+<code class="descclassname">Mappings.</code><code class="descname">change_mapping_to_use_log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.change_mapping_to_use_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the mapping from using the consolidated table to the log table. Used when adjusting manual mappings</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_name</strong> – The event name of the mapping to alter</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The altered mapping</td>
+</tr>
+</tbody>
+</table>
+<p>Events without a _log do not have consolidated table information</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+ <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+ <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This example will change the key to a field named IDENTIFIER</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+  <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+  <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE_LOG&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="change-mapping-for-manual-consolidation-creation">
+<h2>Change Mapping for Manual Consolidation Creation<a class="headerlink" href="#change-mapping-for-manual-consolidation-creation" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id5"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.change_mapping_for_manual_consolidation_creation">
+<code class="descclassname">Mappings.</code><code class="descname">change_mapping_for_manual_consolidation_creation</code><span class="sig-paren">(</span><em>consolidation_schema</em>, <em>consolidation_table_name</em>, <em>consolidation_keys</em>, <em>case='UPPER'</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.change_mapping_for_manual_consolidation_creation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the mapping after creating the log table manually</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>consolidation_schema</strong> – The schema of consolidated table</li>
+<li><strong>consolidation_table_name</strong> – The name of the consolidated table</li>
+<li><strong>consolidation_keys</strong> – The consolidation keys (primary key) for the table. Takes a single field or a list</li>
+<li><strong>case</strong> – UPPER if your events are MY_SCHEMA.MY_EVENT and LOWER if the events are my_schema_my_event</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The altered mapping</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>First adjust the tables in the data warehouse.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">MY_TABLE</span> <span class="n">RENAME</span> <span class="n">TO</span> <span class="n">MY_TABLE_LOG</span><span class="p">;</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">MY_TABLE</span> <span class="n">LIKE</span> <span class="n">MY_TABLE_LOG</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then run change_mapping_for_manual_consolidation_creation  to change the mapping to insert data into the new log table. This is the old mapping:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="s1">&#39;consolidation&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+                 <span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+                 <span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">,</span>
+                 <span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+<span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">},</span>
+</pre></div>
+</div>
+<p>These are the changes that will be applied with the new mapping</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="s1">&#39;consolidation&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ID_FIELD&#39;</span><span class="p">],</span>
+                 <span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+<span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE_LOG&#39;</span><span class="p">},</span>
+</pre></div>
+</div>
+<p>Lastly add consolidation queries to combine the new data with the existing data using <a class="reference internal" href="consolidations.html#managealooma.consolidations.Consolidations.create_consolidation" title="managealooma.consolidations.Consolidations.create_consolidation"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_consolidation()</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="delete-field-from-mapping">
+<h2>Delete Field From Mapping<a class="headerlink" href="#delete-field-from-mapping" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id6"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.delete_field_from_mapping">
+<code class="descclassname">Mappings.</code><code class="descname">delete_field_from_mapping</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.delete_field_from_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a mapping, deletes a field from the mapping, and resets the mapping table statistics.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event_name</strong> – the name of event for which to make the change</li>
+<li><strong>field_name</strong> – the field name that should be deleted</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The altered mapping</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If print_changes is specified the details for the field to remove is printed</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mi">16777216</span><span class="p">,</span>
+                             <span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;truncate&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">},</span>
+             <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>Then the entire new mapping is printed. The ‘name’ field is not longer in the mapping</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;autoMappingError&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+ <span class="s1">&#39;consolidation&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+  <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;ID&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                              <span class="s1">&#39;precision&#39;</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
+                              <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                              <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;NUMERIC&#39;</span><span class="p">},</span>
+                              <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                              <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                              <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+              <span class="p">]</span>
+ <span class="s1">&#39;inputObjects&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;12345-asdfg&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;98765-zxcvb&#39;</span><span class="p">]},</span>
+ <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE_LOG&#39;</span><span class="p">},</span>
+  <span class="s1">&#39;mappingMode&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTO_MAP&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA.MY_TABLE&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;origInputLabel&#39;</span><span class="p">:</span> <span class="s1">&#39;production_database&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;schemaUrls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;schema?id=12345-asdfg&amp;schema_object=my_table&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;schema?id=d=12345-asdfg&amp;sschema_object=deleted_rows&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;MAPPED&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;usingDefaultMappingMode&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="change-field-mapping-settings">
+<h2>Change Field Mapping Settings<a class="headerlink" href="#change-field-mapping-settings" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id7"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.change_field_mapping_settings">
+<code class="descclassname">Mappings.</code><code class="descname">change_field_mapping_settings</code><span class="sig-paren">(</span><em>field_name</em>, <em>new_data_type</em>, <em>truncate=False</em>, <em>non_null=False</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.change_field_mapping_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a single filed in a mapping</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field_name</strong> – The field name to alter</li>
+<li><strong>new_data_type</strong> – The new datatype for the mapping such as VARCHAR(1024) or INT</li>
+<li><strong>truncate</strong> – Set to True if the event should be truncated when it’s longer than the specific mapping length. Redshift’s max VARCHAR is 65535 and Snowflake’s max VARCHAR is 16777216.</li>
+<li><strong>non_null</strong> – Set to true if the field is needs to be not null</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The altered mapping</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The current mapping field settings</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INT&#39;</span><span class="p">:</span>
+                             <span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;truncate&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">},</span>
+             <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>The new mapping field settings to apply</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span>
+                             <span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;truncate&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                             <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">},</span>
+             <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="change-field-varchar-length">
+<h2>Change Field Varchar Length<a class="headerlink" href="#change-field-varchar-length" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id8"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.change_field_varchar_length">
+<code class="descclassname">Mappings.</code><code class="descname">change_field_varchar_length</code><span class="sig-paren">(</span><em>field_name</em>, <em>new_length</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.change_field_varchar_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates only the length of a varchar for a field.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field_name</strong> – The field name to alter</li>
+<li><strong>new_length</strong> – The new length for the varchar</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span>
+                             <span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;truncate&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">},</span>
+             <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mi">16777216</span><span class="p">,</span>
+                             <span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;truncate&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                             <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">},</span>
+             <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="change-field-null-constraint">
+<h2>Change Field Null Constraint<a class="headerlink" href="#change-field-null-constraint" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id9"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.change_field_null_constraint">
+<code class="descclassname">Mappings.</code><code class="descname">change_field_null_constraint</code><span class="sig-paren">(</span><em>field_name</em>, <em>nonnull=False</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.change_field_null_constraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the NULL constraint from a column</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field_name</strong> – The column for which to remove the constraint</li>
+<li><strong>nonnull</strong> – The new null setting for the field</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The altered mapping</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The field mapping details with the current nonnull setting</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+<span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+<span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;ID&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                           <span class="s1">&#39;precision&#39;</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
+                           <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;NUMERIC&#39;</span><span class="p">},</span>
+           <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+           <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+           <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The field mapping details with the new nonnull setting</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+<span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+<span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;ID&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                           <span class="s1">&#39;precision&#39;</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
+                           <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;NUMERIC&#39;</span><span class="p">},</span>
+           <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+           <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+           <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="check-consolidation-uses-log">
+<h2>Check Consolidation Uses Log<a class="headerlink" href="#check-consolidation-uses-log" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="check-if-consolidation-uses-log"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.check_if_consolidation_uses_log">
+<code class="descclassname">Mappings.</code><code class="descname">check_if_consolidation_uses_log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.check_if_consolidation_uses_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the event uses a log table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_name</strong> – The name of the event for which to check</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<p>Prints the event name, consolidation key list, the table data is inserted to, and True/False if the insert contains _LOG in the name
+event_name [‘consolidation_key_list’] mapping_table_name True/False</p>
+</dd></dl>
+
+</div>
+<div class="section" id="copy-mapping">
+<h2>Copy Mapping<a class="headerlink" href="#copy-mapping" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id10"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.copy_mapping">
+<code class="descclassname">Mappings.</code><code class="descname">copy_mapping</code><span class="sig-paren">(</span><em>new_event</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.copy_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies mapping from the event the class is instantiated with to a new event. Only the name changes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>new_event</strong> – The name of the event to copy to</li>
+<li><strong>print_mapping</strong> – Prints the changes if specified</li>
+<li><strong>apply_changes</strong> – Applies the changes if specified</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The altered mapping</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="set-mapping-from-existing-mapping">
+<h2>Set Mapping from Existing Mapping<a class="headerlink" href="#set-mapping-from-existing-mapping" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id11"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.set_mapping_from_existing_mapping">
+<code class="descclassname">Mappings.</code><code class="descname">set_mapping_from_existing_mapping</code><span class="sig-paren">(</span><em>new_event_name</em>, <em>new_schema</em>, <em>new_table</em>, <em>new_input_label</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.set_mapping_from_existing_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the mapping from the event the class is instantiated with event and uses it to set a new mapping</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>new_event_name</strong> – The event for which to set the new mapping</li>
+<li><strong>new_schema</strong> – The schema for the new mapping</li>
+<li><strong>new_table</strong> – The table for the new mapping</li>
+<li><strong>new_input_label</strong> – The input label of the new mapping</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The altered mapping</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="add-field-to-mapping">
+<h2>Add Field To Mapping<a class="headerlink" href="#add-field-to-mapping" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id12"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.add_field_to_mapping">
+<code class="descclassname">Mappings.</code><code class="descname">add_field_to_mapping</code><span class="sig-paren">(</span><em>field_name</em>, <em>column_name</em>, <em>data_type</em>, <em>precision=38</em>, <em>scale=0</em>, <em>length=16777216</em>, <em>truncate=False</em>, <em>non_null=False</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.add_field_to_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a single field without sub-fields to the mapping. Works for Snowflake data types only.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field_name</strong> – The field name to add</li>
+<li><strong>column_name</strong> – The name of the column in the target DB</li>
+<li><strong>data_type</strong> – The data type for the field out of NUMBER, VARIANT, BOOLEAN, VARCHAR, FLOAT, TIMESTAMP</li>
+<li><strong>precision</strong> – The precision for numeric data</li>
+<li><strong>scale</strong> – The scale for numeric data</li>
+<li><strong>length</strong> – The length for a varchar</li>
+<li><strong>truncate</strong> – Set to True if the event should be truncated when it’s longer than the specific mapping length.  Redshift’s max VARCHAR is 65535</li>
+<li><strong>non_null</strong> – Set to true if the field is needs to be not null</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The altered mapping</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Prints the entire existing mapping before the field is added</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;autoMappingError&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+ <span class="s1">&#39;consolidation&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+  <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;ID&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                              <span class="s1">&#39;precision&#39;</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
+                              <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                              <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;NUMERIC&#39;</span><span class="p">},</span>
+                              <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                              <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                              <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+              <span class="p">]</span>
+ <span class="s1">&#39;inputObjects&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;12345-asdfg&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;98765-zxcvb&#39;</span><span class="p">]},</span>
+ <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE_LOG&#39;</span><span class="p">},</span>
+  <span class="s1">&#39;mappingMode&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTO_MAP&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA.MY_TABLE&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;origInputLabel&#39;</span><span class="p">:</span> <span class="s1">&#39;production_database&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;schemaUrls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;schema?id=12345-asdfg&amp;schema_object=my_table&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;schema?id=d=12345-asdfg&amp;schema_object=deleted_rows&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;MAPPED&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;usingDefaultMappingMode&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Then prints the entire new mapping to set after the field is added. This example adds the NAME field as a VARCHAR</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span><span class="s1">&#39;autoMappingError&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+<span class="s1">&#39;consolidation&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;consolidatedSchema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;consolidatedTableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;consolidationKeys&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span>
+                 <span class="s1">&#39;viewSchema&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+ <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;ID&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                             <span class="s1">&#39;precision&#39;</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
+                             <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                             <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;NUMERIC&#39;</span><span class="p">},</span>
+                             <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}},</span>
+             <span class="p">{</span><span class="s1">&#39;fieldName&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;columnName&#39;</span><span class="p">:</span> <span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;columnType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mi">16777216</span><span class="p">,</span>
+                             <span class="s1">&#39;nonNull&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;truncate&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                             <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">},</span>
+             <span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;machineGenerated&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+             <span class="s1">&#39;subFields&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}}</span>
+             <span class="p">]</span>
+<span class="s1">&#39;inputObjects&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;12345-asdfg&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;98765-zxcvb&#39;</span><span class="p">]},</span>
+<span class="s1">&#39;mapping&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;isDiscarded&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s1">&#39;outputHint&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;table&quot;:&quot;my_table&quot;,&quot;schema&quot;:&quot;MY_SCHEMA&quot;}&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;outputId&#39;</span><span class="p">:</span> <span class="s1">&#39;a1s2d3-f4g5h6&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;readOnly&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;tableName&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_TABLE_LOG&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;mappingMode&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTO_MAP&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;MY_SCHEMA.MY_TABLE&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;origInputLabel&#39;</span><span class="p">:</span> <span class="s1">&#39;production_database&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;schemaUrls&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;schema?id=12345-asdfg&amp;schema_object=my_table&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;schema?id=d=12345-asdfg&amp;sschema_object=deleted_rows&#39;</span><span class="p">],</span>
+ <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;MAPPED&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;usingDefaultMappingMode&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="preview-mapping-changes">
+<h2>Preview Mapping Changes<a class="headerlink" href="#preview-mapping-changes" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id13"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.preview_mapping_changes">
+<code class="descclassname">Mappings.</code><code class="descname">preview_mapping_changes</code><span class="sig-paren">(</span><em>mapping</em>, <em>new_mapping</em>, <em>show_matching</em>, <em>show_changed</em>, <em>show_removed</em>, <em>show_added</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.preview_mapping_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes an original mapping and altered mapping and prints various views on the changes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mapping</strong> – A dictionary representing the current state of the mapping</li>
+<li><strong>new_mapping</strong> – An altered dictionary representing the changed state of the mapping</li>
+<li><strong>show_matching</strong> – Show the key value pairs that match between the two mappings</li>
+<li><strong>show_changed</strong> – Show the key value pairs that have been changed between the two mappings</li>
+<li><strong>show_removed</strong> – Show the key value pairs that were removed from the current state of the mapping</li>
+<li><strong>show_added</strong> – Show the key value pairs that were added to the changed state of the mapping</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="apply-mapping-changes">
+<h2>Apply Mapping Changes<a class="headerlink" href="#apply-mapping-changes" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id14"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.apply_mapping_changes">
+<code class="descclassname">Mappings.</code><code class="descname">apply_mapping_changes</code><span class="sig-paren">(</span><em>mapping</em>, <em>print_message</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.apply_mapping_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the mapping changes in the Alooma API</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mapping</strong> – The new mapping to set</li>
+<li><strong>print_message</strong> – A message to print after a successful change</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="remove-unmapped-fields-and-clear-table-stats">
+<h2>Remove Unmapped Fields and Clear Table Stats<a class="headerlink" href="#remove-unmapped-fields-and-clear-table-stats" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id15"></span><dl class="method">
+<dt id="managealooma.mappings.Mappings.remove_unmapped_fields_and_clear_table_stats">
+<code class="descclassname">Mappings.</code><code class="descname">remove_unmapped_fields_and_clear_table_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.mappings.Mappings.remove_unmapped_fields_and_clear_table_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove unmapped fields from the a mapping and clear the UI stats.
+The mapper can become very slow over time and clearing the table stats periodically will help speed it back up.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">none</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="samples.html" class="btn btn-neutral float-right" title="Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="inputs.html" class="btn btn-neutral float-left" title="Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jay Rosenthal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

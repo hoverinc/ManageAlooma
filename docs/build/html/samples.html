@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Samples &mdash; managealooma 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Secrets" href="secrets.html" />
+    <link rel="prev" title="Mappings" href="mappings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> managealooma
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="column_ddl.html">Column DDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consolidations.html">Consolidations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mappings.html">Mappings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Samples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#build-sample-file-path-and-file-name">Build Sample File Path and File Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#print-samples">Print Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-samples-for-event-from-alooma-api">Get Samples for Event from Alooma API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-samples-for-event-from-alooma-api">View Samples for Event from Alooma API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-samples-from-file">Get Samples from File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-samples-from-saved-sample-files">Get Samples from Saved Sample Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-samples-from-file">View Samples from File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#save-alooma-samples-to-files">Save Alooma Samples to Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#write-alooma-samples-to-files">Write Alooma Samples to Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-sample-from-any-api">Get Sample from Any API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-sample-from-postgresql-database">Get Sample from PostgreSQL Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Secrets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_functions.html">Transformation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_test.html">Transformation Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">managealooma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Samples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/samples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-managealooma.samples"></span><div class="section" id="samples">
+<h1>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h1>
+<p>Samples are dictionaries with a small subset of data for each event type.</p>
+<span class="target" id="samples-init"></span><dl class="method">
+<dt id="managealooma.samples.Samples.__init__">
+<code class="descclassname">Samples.</code><code class="descname">__init__</code><span class="sig-paren">(</span><em>api</em>, <em>sample_event_directory</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each event Alooma stores sample dictionaries. This class will help you interact and copy the samples for testing. We run integration testing on the entirety of the sample set before deploying.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>api</strong> – The Alooma API client authentication</li>
+<li><strong>sample_event_directory</strong> – The full path and name of the directory in which to store sample events such as /Users/myname/code/hover/alooma-etl/sample_events</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="build-sample-file-path-and-file-name">
+<h2>Build Sample File Path and File Name<a class="headerlink" href="#build-sample-file-path-and-file-name" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id1"></span><dl class="method">
+<dt id="managealooma.samples.Samples.build_sample_file_path_and_file_name">
+<code class="descclassname">Samples.</code><code class="descname">build_sample_file_path_and_file_name</code><span class="sig-paren">(</span><em>sample_file_type='event'</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.build_sample_file_path_and_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs the file path and name for writing the samples</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sample_file_type</strong> – The type of file either ‘event’ or ‘input’</li>
+<li><strong>name</strong> – The name of the event or input</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a file path with the file name</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="print-samples">
+<h2>Print Samples<a class="headerlink" href="#print-samples" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id2"></span><dl class="staticmethod">
+<dt id="managealooma.samples.Samples.print_samples">
+<em class="property">static </em><code class="descclassname">Samples.</code><code class="descname">print_samples</code><span class="sig-paren">(</span><em>sample_list</em>, <em>view_all_or_index='all'</em>, <em>pprint_indent=2</em>, <em>pprint_width=200</em>, <em>pprint_depth=5</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.print_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints all the samples in a list or pretty prints a single sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sample_list</strong> – A list of samples</li>
+<li><strong>view_all_or_index</strong> – ‘all’ to print all samples or a number to print sample by index</li>
+<li><strong>pprint_indent</strong> – The indent value to pprint dictionaries</li>
+<li><strong>pprint_width</strong> – The width value to pprint dictionaries</li>
+<li><strong>pprint_depth</strong> – The depth value to pprint dictionaries</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-samples-for-event-from-alooma-api">
+<h2>Get Samples for Event from Alooma API<a class="headerlink" href="#get-samples-for-event-from-alooma-api" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id3"></span><dl class="method">
+<dt id="managealooma.samples.Samples.get_samples_for_event_from_alooma_api">
+<code class="descclassname">Samples.</code><code class="descname">get_samples_for_event_from_alooma_api</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.get_samples_for_event_from_alooma_api" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets samples for a single event from the API</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_name</strong> – The event for which to get samples</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of samples</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="view-samples-for-event-from-alooma-api">
+<h2>View Samples for Event from Alooma API<a class="headerlink" href="#view-samples-for-event-from-alooma-api" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id4"></span><dl class="method">
+<dt id="managealooma.samples.Samples.view_samples_for_event_from_alooma_api">
+<code class="descclassname">Samples.</code><code class="descname">view_samples_for_event_from_alooma_api</code><span class="sig-paren">(</span><em>event_name</em>, <em>view_all_or_index='all'</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.view_samples_for_event_from_alooma_api" title="Permalink to this definition">¶</a></dt>
+<dd><p>View samples for an event from the API. Print all or a single event by index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event_name</strong> – The name of the event for which to view samples</li>
+<li><strong>view_all_or_index</strong> – Specify to view ‘all’ the samples for an event or a specific event by index number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-samples-from-file">
+<h2>Get Samples from File<a class="headerlink" href="#get-samples-from-file" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id5"></span><dl class="staticmethod">
+<dt id="managealooma.samples.Samples.get_samples_from_file">
+<em class="property">static </em><code class="descclassname">Samples.</code><code class="descname">get_samples_from_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.get_samples_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-samples-from-saved-sample-files">
+<h2>Get Samples from Saved Sample Files<a class="headerlink" href="#get-samples-from-saved-sample-files" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id6"></span><dl class="method">
+<dt id="managealooma.samples.Samples.get_samples_from_saved_sample_files">
+<code class="descclassname">Samples.</code><code class="descname">get_samples_from_saved_sample_files</code><span class="sig-paren">(</span><em>sample_file_type='event'</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.get_samples_from_saved_sample_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the samples for an event or input from a saved file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sample_file_type</strong> – The name of the file to retrieve samples for. Exclude the .json extension</li>
+<li><strong>name</strong> – The name of the event or input to get the samples for</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A list with the samples from the file</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="view-samples-from-file">
+<h2>View Samples from File<a class="headerlink" href="#view-samples-from-file" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id7"></span><dl class="method">
+<dt id="managealooma.samples.Samples.view_samples_from_file">
+<code class="descclassname">Samples.</code><code class="descname">view_samples_from_file</code><span class="sig-paren">(</span><em>sample_file_type='event'</em>, <em>name=None</em>, <em>view_all_or_index='all'</em>, <em>pprint_indent=2</em>, <em>pprint_width=200</em>, <em>pprint_depth=5</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.view_samples_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the samples for an event or input from the API</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sample_file_type</strong> – Whether the samples are for an ‘event’ or an ‘input’</li>
+<li><strong>name</strong> – The name of the event or input</li>
+<li><strong>view_all_or_index</strong> – Specify to view ‘all’ the samples for an event or a specific event by index</li>
+<li><strong>pprint_indent</strong> – The indent value to pprint dictionaries</li>
+<li><strong>pprint_width</strong> – The width value to pprint dictionaries</li>
+<li><strong>pprint_depth</strong> – The depth value to pprint dictionaries</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="save-alooma-samples-to-files">
+<h2>Save Alooma Samples to Files<a class="headerlink" href="#save-alooma-samples-to-files" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id8"></span><dl class="method">
+<dt id="managealooma.samples.Samples.save_alooma_samples_to_files">
+<code class="descclassname">Samples.</code><code class="descname">save_alooma_samples_to_files</code><span class="sig-paren">(</span><em>event_name=None</em>, <em>input_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.save_alooma_samples_to_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves samples to files in the specified directory.
+If no event_name or input_name are specified samples for ALL events will be written to a file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event_name</strong> – The event name for samples to save.  If specified only samples for this event are retrieved</li>
+<li><strong>input_name</strong> – The input name for samples to save. If specified all samples for this input are retrieved</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="write-alooma-samples-to-files">
+<h2>Write Alooma Samples to Files<a class="headerlink" href="#write-alooma-samples-to-files" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id9"></span><dl class="method">
+<dt id="managealooma.samples.Samples.write_alooma_samples_to_files">
+<code class="descclassname">Samples.</code><code class="descname">write_alooma_samples_to_files</code><span class="sig-paren">(</span><em>event_list</em>, <em>input_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.write_alooma_samples_to_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes samples to files for each event. Writes input file with samples for all events in the input when input_name is specified.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event_list</strong> – A list of events for which to write samples for</li>
+<li><strong>input_name</strong> – The name of the input to write the samples for to limit the samples to a specific input</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-sample-from-any-api">
+<h2>Get Sample from Any API<a class="headerlink" href="#get-sample-from-any-api" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id10"></span><dl class="staticmethod">
+<dt id="managealooma.samples.Samples.get_sample_from_any_api">
+<em class="property">static </em><code class="descclassname">Samples.</code><code class="descname">get_sample_from_any_api</code><span class="sig-paren">(</span><em>url</em>, <em>payload</em>, <em>api_key</em>, <em>input_label</em>, <em>print_api_response=True</em>, <em>test_index_number=0</em>, <em>input_type='rest_endpoint'</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.get_sample_from_any_api" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a sample to test from a 3rd party API using the requests package and adds the required Alooma _metadata to the event</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> – The URL for which to make the get request e.g. <a class="reference external" href="https://harvest.greenhouse.io/v1/scheduled_interviews">https://harvest.greenhouse.io/v1/scheduled_interviews</a></li>
+<li><strong>payload</strong> – A JSON dictionary with the parameters to add to the requests e.g. {‘updated_after’: ‘2018-08-25T00:00:00Z’}</li>
+<li><strong>api_key</strong> – The API key with which to make the request</li>
+<li><strong>preview_events</strong> – If True all the events retrieved will be printed to the console</li>
+<li><strong>input_label</strong> – The input_label to give these events when deployed in Alooma</li>
+<li><strong>test_index_number</strong> – The index number of the event to test</li>
+<li><strong>input_type</strong> – The type of input the data will use when deployed to Alooma</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An event with metadata added that can be tested through the transformation code</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-sample-from-postgresql-database">
+<h2>Get Sample from PostgreSQL Database<a class="headerlink" href="#get-sample-from-postgresql-database" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id11"></span><dl class="staticmethod">
+<dt id="managealooma.samples.Samples.get_sample_from_postgresql_database">
+<em class="property">static </em><code class="descclassname">Samples.</code><code class="descname">get_sample_from_postgresql_database</code><span class="sig-paren">(</span><em>db_host</em>, <em>db_port</em>, <em>db_user</em>, <em>db_password</em>, <em>db_name</em>, <em>input_label</em>, <em>table_name</em>, <em>id_field</em>, <em>row_id</em>, <em>print_event=True</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.samples.Samples.get_sample_from_postgresql_database" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="secrets.html" class="btn btn-neutral float-right" title="Secrets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mappings.html" class="btn btn-neutral float-left" title="Mappings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jay Rosenthal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

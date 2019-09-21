@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Events &mdash; managealooma 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Inputs" href="inputs.html" />
+    <link rel="prev" title="Consolidations" href="consolidations.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> managealooma
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="column_ddl.html">Column DDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consolidations.html">Consolidations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#print-sorted-list">Print Sorted List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-all-events">Get All Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-events">View Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-events">List Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-event">Delete Event</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mappings.html">Mappings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Secrets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_functions.html">Transformation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_test.html">Transformation Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">managealooma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Events</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/events.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-managealooma.events"></span><div class="section" id="events">
+<h1>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h1>
+<p>Each event equates to a mapping between a dictionary and a single target table in the data warehouse. This class retrieves lists of events and information about events.</p>
+<span class="target" id="events-init"></span><dl class="method">
+<dt id="managealooma.events.Events.__init__">
+<code class="descclassname">Events.</code><code class="descname">__init__</code><span class="sig-paren">(</span><em>api</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.events.Events.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets information from Alooma on events and prints detailed information about events.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>api</strong> – api authentication using the Alooma package</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="print-sorted-list">
+<h2>Print Sorted List<a class="headerlink" href="#print-sorted-list" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id1"></span><dl class="staticmethod">
+<dt id="managealooma.events.Events.print_sorted_list">
+<em class="property">static </em><code class="descclassname">Events.</code><code class="descname">print_sorted_list</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.events.Events.print_sorted_list" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> – list Takes a list and prints a sorted list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-all-events">
+<h2>Get All Events<a class="headerlink" href="#get-all-events" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="get-event-types"></span><dl class="method">
+<dt id="managealooma.events.Events.get_all_events">
+<code class="descclassname">Events.</code><code class="descname">get_all_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.events.Events.get_all_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the information for all events from Alooma</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of dictionaries with information for each event</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="view-events">
+<h2>View Events<a class="headerlink" href="#view-events" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="event-info"></span><dl class="method">
+<dt id="managealooma.events.Events.view_events">
+<code class="descclassname">Events.</code><code class="descname">view_events</code><span class="sig-paren">(</span><em>single_input=None</em>, <em>single_event=None</em>, <em>print_format='table'</em>, <em>table_limit=None</em>, <em>pprint_indent=2</em>, <em>pprint_width=250</em>, <em>pprint_depth=5</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.events.Events.view_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a data from with the event info</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>single_input</strong> – The name of a specific input to filter the results</li>
+<li><strong>single_event</strong> – The name of a specific event to filter the results</li>
+<li><strong>print_format</strong> – Specify ‘table’ to print event info as tables or ‘json’ to print as dictionaries</li>
+<li><strong>table_limit</strong> – Limit the number of events printed in the dataframe</li>
+<li><strong>pprint_indent</strong> – The indent value to pprint dictionaries</li>
+<li><strong>pprint_width</strong> – The width value to pprint dictionaries</li>
+<li><strong>pprint_depth</strong> – The depth value to pprint dictionaries</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The event data in the print_format of a dataframe or a list of dictionaries</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="list-events">
+<h2>List Events<a class="headerlink" href="#list-events" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="event-list"></span><dl class="method">
+<dt id="managealooma.events.Events.list_events">
+<code class="descclassname">Events.</code><code class="descname">list_events</code><span class="sig-paren">(</span><em>input_labels='all'</em>, <em>print_lst=False</em>, <em>add_quotes_commas=False</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.events.Events.list_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints and/or returns a list of event names</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input</strong> – string ‘all’ for all events or specify an input label for a specific events</li>
+<li><strong>print_lst</strong> – boolean True to print the list to the console</li>
+<li><strong>add_quotes_commas</strong> – boolean True to print the list to the console with single quotes around strings and commas after each item</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of events by name</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="delete-event">
+<h2>Delete Event<a class="headerlink" href="#delete-event" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id2"></span><dl class="method">
+<dt id="managealooma.events.Events.delete_event">
+<code class="descclassname">Events.</code><code class="descname">delete_event</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.events.Events.delete_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an event from the mapper and prints the event_name and API response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_name</strong> – The name of the event to delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="inputs.html" class="btn btn-neutral float-right" title="Inputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="consolidations.html" class="btn btn-neutral float-left" title="Consolidations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jay Rosenthal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; managealooma 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mappings - managing mapping settings" href="mappings.html" />
+    <link rel="prev" title="Help" href="help.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> managealooma
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies-and-extensions">Dependencies and extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-goals">Design goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#etl-pipelines">ETL pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-and-object-oriented-programming-styles">Functional and object-oriented programming styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-use">Interactive use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ipython-notebook-integration">IPython notebook integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#petl-executable"><code class="docutils literal notranslate"><span class="pre">petl</span></code> executable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conventions-table-containers-and-table-iterators">Conventions - table containers and table iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extensions-integrating-custom-data-sources">Extensions - integrating custom data sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#caching">Caching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mappings.html">Mappings - managing mapping settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consolidations.html">Consolidations</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">managealooma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<span id="intro-installation"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>This package is available from the <a class="reference external" href="http://pypi.python.org/pypi/petl">Python Package Index</a>. If you have <a class="reference external" href="https://pip.pypa.io/">pip</a> you should be able to do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install managealooma
+</pre></div>
+</div>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">managealooma</span></code> is compatible with Python versions 3.7 and
+has been tested under the Mac and Window operating system</p>
+</div>
+<div class="section" id="dependencies-and-extensions">
+<span id="intro-dependencies"></span><h2>Dependencies and extensions<a class="headerlink" href="#dependencies-and-extensions" title="Permalink to this headline">¶</a></h2>
+<p>This package is written in pure Python and has no installation requirements
+other than the Python core modules.</p>
+<p>Some of the functions in this package require installation of third party
+packages. This is indicated in the relevant parts of the documentation.</p>
+<p>Some domain-specific and/or experimental extensions to <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> are
+available from the <a class="reference external" href="http://petlx.readthedocs.org">petlx</a> package.</p>
+</div>
+<div class="section" id="design-goals">
+<span id="intro-design-goals"></span><h2>Design goals<a class="headerlink" href="#design-goals" title="Permalink to this headline">¶</a></h2>
+<p>This package is designed primarily for convenience and ease of use,
+especially when working interactively with data that are unfamiliar,
+heterogeneous and/or of mixed quality.</p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> transformation pipelines make minimal use of system memory
+and can scale to millions of rows if speed is not a priority. However
+if you are working with very large datasets and/or performance-critical
+applications then other packages may be more suitable, e.g., see
+<a class="reference external" href="http://pandas.pydata.org/">pandas</a>, <a class="reference external" href="https://pytables.github.io/">pytables</a>, <a class="reference external" href="http://bcolz.blosc.org/">bcolz</a>
+and <a class="reference external" href="http://blaze.pydata.org/">blaze</a>. See also <span class="xref std std-doc">related_work</span>.</p>
+</div>
+<div class="section" id="etl-pipelines">
+<span id="intro-pipelines"></span><h2>ETL pipelines<a class="headerlink" href="#etl-pipelines" title="Permalink to this headline">¶</a></h2>
+<p>This package makes extensive use of lazy evaluation and iterators. This
+means, generally, that a pipeline will not actually be executed until
+data is requested.</p>
+<p>E.g., given a file at ‘example.csv’ in the current working directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example_data</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;foo,bar,baz</span>
+<span class="gp">... </span><span class="s2">a,1,3.4</span>
+<span class="gp">... </span><span class="s2">b,2,7.4</span>
+<span class="gp">... </span><span class="s2">c,6,2.2</span>
+<span class="gp">... </span><span class="s2">d,9,8.1</span>
+<span class="gp">... </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">example_data</span><span class="p">)</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>…the following code <strong>does not</strong> actually read the file or load any of its
+contents into memory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">petl</span> <span class="k">as</span> <span class="nn">etl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table1</span> <span class="o">=</span> <span class="n">etl</span><span class="o">.</span><span class="n">fromcsv</span><span class="p">(</span><span class="s1">&#39;example.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Rather, <cite>table1</cite> is a <strong>table container</strong> (see <a class="reference internal" href="#intro-conventions"><span class="std std-ref">Conventions - table containers and table iterators</span></a>
+below) which can be iterated over, extracting data from the
+underlying file on demand.</p>
+<p>Similarly, if one or more transformation functions are applied, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table2</span> <span class="o">=</span> <span class="n">etl</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">table1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table3</span> <span class="o">=</span> <span class="n">etl</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">table2</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table4</span> <span class="o">=</span> <span class="n">etl</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">table3</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table5</span> <span class="o">=</span> <span class="n">etl</span><span class="o">.</span><span class="n">addfield</span><span class="p">(</span><span class="n">table4</span><span class="p">,</span> <span class="s1">&#39;quux&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">bar</span> <span class="o">*</span> <span class="n">row</span><span class="o">.</span><span class="n">baz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>…no actual transformation work will be done until data are
+requested from <cite>table5</cite> (or any of the other tables returned by
+the intermediate steps).</p>
+<p>So in effect, a 5 step pipeline has been set up, and rows will pass through
+the pipeline on demand, as they are pulled from the end of the pipeline via
+iteration.</p>
+<p>A call to a function like <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.util.vis.look()</span></code>, or any of the functions
+which write data to a file or database (e.g., <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.io.csv.tocsv()</span></code>,
+<code class="xref py py-func docutils literal notranslate"><span class="pre">petl.io.text.totext()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.io.sqlite3.tosqlite3()</span></code>,
+<code class="xref py py-func docutils literal notranslate"><span class="pre">petl.io.db.todb()</span></code>), will pull data through the pipeline
+and cause all of the transformation steps to be executed on the
+requested rows, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">etl</span><span class="o">.</span><span class="n">look</span><span class="p">(</span><span class="n">table5</span><span class="p">)</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+<span class="go">| foo | bar | baz | quux               |</span>
+<span class="go">+=====+=====+=====+====================+</span>
+<span class="go">| &#39;A&#39; |   1 | 3.4 |                3.4 |</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+<span class="go">| &#39;B&#39; |   2 | 7.4 |               14.8 |</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+<span class="go">| &#39;C&#39; |   6 | 2.2 | 13.200000000000001 |</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+<span class="go">| &#39;D&#39; |   9 | 8.1 |  72.89999999999999 |</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+</pre></div>
+</div>
+<p>…although note that <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.util.vis.look()</span></code> will by default only request
+the first 5 rows, and so the minimum amount of processing will be done to
+produce 5 rows.</p>
+</div>
+<div class="section" id="functional-and-object-oriented-programming-styles">
+<span id="intro-programming-styles"></span><h2>Functional and object-oriented programming styles<a class="headerlink" href="#functional-and-object-oriented-programming-styles" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> package supports both functional and object-oriented
+programming styles. For example, the example in the section on
+<a class="reference internal" href="#intro-pipelines"><span class="std std-ref">ETL pipelines</span></a> above could also be written as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">petl</span> <span class="k">as</span> <span class="nn">etl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">etl</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">fromcsv</span><span class="p">(</span><span class="s1">&#39;example.csv&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">addfield</span><span class="p">(</span><span class="s1">&#39;quux&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">bar</span> <span class="o">*</span> <span class="n">row</span><span class="o">.</span><span class="n">baz</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">look</span><span class="p">()</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+<span class="go">| foo | bar | baz | quux               |</span>
+<span class="go">+=====+=====+=====+====================+</span>
+<span class="go">| &#39;A&#39; |   1 | 3.4 |                3.4 |</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+<span class="go">| &#39;B&#39; |   2 | 7.4 |               14.8 |</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+<span class="go">| &#39;C&#39; |   6 | 2.2 | 13.200000000000001 |</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+<span class="go">| &#39;D&#39; |   9 | 8.1 |  72.89999999999999 |</span>
+<span class="go">+-----+-----+-----+--------------------+</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">wrap()</span></code> function is also provided to use the object-oriented style with
+any valid table container object, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">etl</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="o">.</span><span class="n">look</span><span class="p">()</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| foo | bar |</span>
+<span class="go">+=====+=====+</span>
+<span class="go">| &#39;a&#39; |   1 |</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| &#39;b&#39; |   2 |</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| &#39;c&#39; |   2 |</span>
+<span class="go">+-----+-----+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="interactive-use">
+<span id="intro-interactive-use"></span><h2>Interactive use<a class="headerlink" href="#interactive-use" title="Permalink to this headline">¶</a></h2>
+<p>When using <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> from within an interactive Python session, the
+default representation for table objects uses the <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.util.vis.look()</span></code>
+function, so a table object can be returned at the prompt to inspect it, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">etl</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| foo | bar |</span>
+<span class="go">+=====+=====+</span>
+<span class="go">| &#39;a&#39; |   1 |</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| &#39;b&#39; |   2 |</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| &#39;c&#39; |   2 |</span>
+<span class="go">+-----+-----+</span>
+</pre></div>
+</div>
+<p>By default data values are rendered using the built-in <code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code> function.
+To see the string (<code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code>) values instead, <code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code> the table, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| foo | bar |</span>
+<span class="go">+=====+=====+</span>
+<span class="go">| a   |   1 |</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| b   |   2 |</span>
+<span class="go">+-----+-----+</span>
+<span class="go">| c   |   2 |</span>
+<span class="go">+-----+-----+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ipython-notebook-integration">
+<span id="intro-ipython-notebook"></span><h2>IPython notebook integration<a class="headerlink" href="#ipython-notebook-integration" title="Permalink to this headline">¶</a></h2>
+<p>Table objects also implement <code class="docutils literal notranslate"><span class="pre">_repr_html_()</span></code> and so will be displayed as an
+HTML table if returned from a cell in an IPython notebook. The functions
+<code class="xref py py-func docutils literal notranslate"><span class="pre">petl.util.vis.display()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.util.vis.displayall()</span></code> also
+provide more control over rendering of tables within an IPython notebook.</p>
+<p>For examples of usage see the <a class="reference external" href="http://nbviewer.ipython.org/github/petl-developers/petl/blob/v1.0/repr_html.ipynb">repr_html notebook</a>.</p>
+</div>
+<div class="section" id="petl-executable">
+<span id="intro-executable"></span><h2><code class="docutils literal notranslate"><span class="pre">petl</span></code> executable<a class="headerlink" href="#petl-executable" title="Permalink to this headline">¶</a></h2>
+<p>Also included in the <code class="docutils literal notranslate"><span class="pre">petl</span></code> distribution is a script to execute
+simple transformation pipelines directly from the operating system
+shell. E.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ petl &quot;dummytable().tocsv()&quot; &gt; example.csv
+$ cat example.csv | petl &quot;fromcsv().cut(&#39;foo&#39;, &#39;baz&#39;).convert(&#39;baz&#39;, float).selectgt(&#39;baz&#39;, 0.5).head().data().totsv()&quot;
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">petl</span></code> script is extremely simple, it expects a single
+positional argument, which is evaluated as Python code but with all of
+the functions in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> namespace imported.</p>
+</div>
+<div class="section" id="conventions-table-containers-and-table-iterators">
+<span id="intro-conventions"></span><h2>Conventions - table containers and table iterators<a class="headerlink" href="#conventions-table-containers-and-table-iterators" title="Permalink to this headline">¶</a></h2>
+<p>This package defines the following convention for objects acting as
+containers of tabular data and supporting row-oriented iteration over
+the data.</p>
+<p>A <strong>table container</strong> (also referred to here as a <strong>table</strong>) is
+any object which satisfies the following:</p>
+<ol class="arabic simple">
+<li>implements the <cite>__iter__</cite> method</li>
+<li><cite>__iter__</cite> returns a <strong>table iterator</strong> (see below)</li>
+<li>all table iterators returned by <cite>__iter__</cite> are independent, i.e., consuming items from one iterator will not affect any other iterators</li>
+</ol>
+<p>A <strong>table iterator</strong> is an iterator which satisfies the following:</p>
+<ol class="arabic simple" start="4">
+<li>each item returned by the iterator is a sequence (e.g., tuple or list)</li>
+<li>the first item returned by the iterator is a <strong>header row</strong> comprising a sequence of <strong>header values</strong></li>
+<li>each subsequent item returned by the iterator is a <strong>data row</strong> comprising a sequence of <strong>data values</strong></li>
+<li>a <strong>header value</strong> is typically a string (<cite>str</cite>) but may be an object of any type as long as it implements <cite>__str__</cite> and is pickleable</li>
+<li>a <strong>data value</strong> is any pickleable object</li>
+</ol>
+<p>So, for example, a list of lists is a valid table container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Note that an object returned by the <code class="xref py py-func docutils literal notranslate"><span class="pre">csv.reader()</span></code> function from the
+standard Python <code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code> module is a table iterator and <strong>not</strong> a table
+container, because it can only be iterated over once. However, it is
+straightforward to define functions that support the table container convention
+and provide access to data from CSV or other types of file or data source, see
+e.g. the <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.io.csv.fromcsv()</span></code> function.</p>
+<p>The main reason for requiring that table containers support independent
+table iterators (point 3) is that data from a table may need to be
+iterated over several times within the same program or interactive
+session. E.g., when using <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> in an interactive session to build up
+a sequence of data transformation steps, the user might want to
+examine outputs from several intermediate steps, before all of the
+steps are defined and the transformation is executed in full.</p>
+<p>Note that this convention does not place any restrictions on the
+lengths of header and data rows. A table may contain a header row
+and/or data rows of varying lengths.</p>
+</div>
+<div class="section" id="extensions-integrating-custom-data-sources">
+<span id="intro-extending"></span><h2>Extensions - integrating custom data sources<a class="headerlink" href="#extensions-integrating-custom-data-sources" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl.io</span></code> module has functions for extracting data from a number of
+well-known data sources. However, it is also straightforward to write an
+extension that enables integration with other data sources. For an object to
+be usable as a <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> table it has to implement the <strong>table container</strong>
+convention described above. Below is the source code for an
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayView</span></code> class which allows integration of <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> with numpy
+arrays. This class is included within the <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl.io.numpy</span></code>
+module but also provides an example of how other data sources might be
+integrated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">petl</span> <span class="k">as</span> <span class="nn">etl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">ArrayView</span><span class="p">(</span><span class="n">etl</span><span class="o">.</span><span class="n">Table</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="c1"># assume that a is a numpy array</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="c1"># yield the header row</span>
+<span class="gp">... </span>        <span class="n">header</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">yield</span> <span class="n">header</span>
+<span class="gp">... </span>        <span class="c1"># yield the data rows</span>
+<span class="gp">... </span>        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="k">yield</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>Now this class enables the use of numpy arrays with <code class="xref py py-mod docutils literal notranslate"><span class="pre">petl</span></code> functions,
+e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span>
+<span class="gp">... </span>              <span class="p">(</span><span class="s1">&#39;oranges&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">),</span>
+<span class="gp">... </span>              <span class="p">(</span><span class="s1">&#39;pears&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)],</span>
+<span class="gp">... </span>             <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;U8, i4,f4&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">ArrayView</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
+<span class="go">+-----------+----+-----------+</span>
+<span class="go">| f0        | f1 | f2        |</span>
+<span class="go">+===========+====+===========+</span>
+<span class="go">| &#39;apples&#39;  | 1  | 2.5       |</span>
+<span class="go">+-----------+----+-----------+</span>
+<span class="go">| &#39;oranges&#39; | 3  | 4.4000001 |</span>
+<span class="go">+-----------+----+-----------+</span>
+<span class="go">| &#39;pears&#39;   | 7  | 0.1       |</span>
+<span class="go">+-----------+----+-----------+</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="s1">&#39;f0&#39;</span><span class="p">,</span> <span class="s1">&#39;f2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;f0&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">addfield</span><span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">f2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span>
+<span class="go">+-----------+-----------+---------------------+</span>
+<span class="go">| f0        | f2        | f3                  |</span>
+<span class="go">+===========+===========+=====================+</span>
+<span class="go">| &#39;APPLES&#39;  | 2.5       |                 5.0 |</span>
+<span class="go">+-----------+-----------+---------------------+</span>
+<span class="go">| &#39;ORANGES&#39; | 4.4000001 |  8.8000001907348633 |</span>
+<span class="go">+-----------+-----------+---------------------+</span>
+<span class="go">| &#39;PEARS&#39;   | 0.1       | 0.20000000298023224 |</span>
+<span class="go">+-----------+-----------+---------------------+</span>
+</pre></div>
+</div>
+<p>If you develop an extension for a data source that you think would also be
+useful for others, please feel free to submit a PR to the
+<a class="reference external" href="https://github.com/petl-developers/petl">petl GitHub repository</a>, or if it
+is a domain-specific data source, the
+<a class="reference external" href="https://github.com/petl-developers/petlx">petlx GitHub repository</a>.</p>
+</div>
+<div class="section" id="caching">
+<span id="intro-caching"></span><h2>Caching<a class="headerlink" href="#caching" title="Permalink to this headline">¶</a></h2>
+<p>This package tries to make efficient use of memory by using iterators
+and lazy evaluation where possible. However, some transformations
+cannot be done without building data structures, either in memory or
+on disk.</p>
+<p>An example is the <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.transform.sorts.sort()</span></code> function, which will either
+sort a table entirely in memory, or will sort the table in memory in chunks,
+writing chunks to disk and performing a final merge sort on the
+chunks. Which strategy is used will depend on the arguments passed
+into the <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.transform.sorts.sort()</span></code> function when it is called.</p>
+<p>In either case, the sorting can take some time, and if the sorted data
+will be used more than once, it is undesirable to start again from
+scratch each time. It is better to cache the sorted data, if possible,
+so it can be re-used.</p>
+<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.transform.sorts.sort()</span></code> function, and all functions which use
+it internally, provide a <cite>cache</cite> keyword argument which can be used to
+turn on or off the caching of sorted data.</p>
+<p>There is also an explicit <code class="xref py py-func docutils literal notranslate"><span class="pre">petl.util.materialise.cache()</span></code> function, which
+can be used to cache in memory up to a configurable number of rows from any
+table.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mappings.html" class="btn btn-neutral float-right" title="Mappings - managing mapping settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="help.html" class="btn btn-neutral float-left" title="Help" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jay Rosenthal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

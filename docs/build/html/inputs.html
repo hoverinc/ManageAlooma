@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Inputs &mdash; managealooma 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mappings" href="mappings.html" />
+    <link rel="prev" title="Events" href="events.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> managealooma
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="column_ddl.html">Column DDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consolidations.html">Consolidations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Inputs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#print-sorted-list">Print Sorted List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-all-inputs">Get All Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-input">Get Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-inputs">View Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-input">Delete Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pause-input">Pause Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resume-input">Resume Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-inputs">List Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-tables">List Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-input-database">Create Input Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-input-configuration">Edit Input Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-table-to-input">Add Table to Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-auto-mapping-mode">Change Auto Mapping Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-template-to-parameter-configuration">Add Template to Parameter Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-parameter-configuration">Edit Parameter Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preview-input-changes">Preview Input Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apply-input-changes">Apply Input Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mappings.html">Mappings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Secrets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_functions.html">Transformation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_test.html">Transformation Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">managealooma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Inputs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/inputs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-managealooma.inputs"></span><div class="section" id="inputs">
+<h1>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h1>
+<p>Inputs are the sources which Alooma pulls data from. Examples of inputs are webhooks, databases, and cloud applications.</p>
+<span class="target" id="inputs-init"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.__init__">
+<code class="descclassname">Inputs.</code><code class="descname">__init__</code><span class="sig-paren">(</span><em>api</em>, <em>preview_full=True</em>, <em>preview_changes=True</em>, <em>apply_changes=False</em>, <em>pprint_indent=2</em>, <em>pprint_width=250</em>, <em>pprint_depth=5</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>View, created and edit Alooma inputs. Inputs are the source of data to bring into Alooma.
+The class is initiated with the following variables:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>api</strong> – The Alooma API client authentication</li>
+<li><strong>preview_full</strong> – Prints the input and changed input if True</li>
+<li><strong>preview_changes</strong> – Prints the changes in the input by category if True</li>
+<li><strong>apply_changes</strong> – Executes the mapping changes if True</li>
+<li><strong>pprint_indent</strong> – The indent value to pprint dictionaries</li>
+<li><strong>pprint_width</strong> – The width value to pprint dictionaries</li>
+<li><strong>pprint_depth</strong> – The depth value to pprint dictionaries</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="section" id="print-sorted-list">
+<h2>Print Sorted List<a class="headerlink" href="#print-sorted-list" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id1"></span><dl class="staticmethod">
+<dt id="managealooma.inputs.Inputs.print_sorted_list">
+<em class="property">static </em><code class="descclassname">Inputs.</code><code class="descname">print_sorted_list</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.print_sorted_list" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> – list Takes a list and prints a sorted list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-all-inputs">
+<h2>Get All Inputs<a class="headerlink" href="#get-all-inputs" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="get-inputs"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.get_all_inputs">
+<code class="descclassname">Inputs.</code><code class="descname">get_all_inputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.get_all_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the information for all inputs from Alooma</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of dictionaries with information for each input</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-input">
+<h2>Get Input<a class="headerlink" href="#get-input" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id2"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.get_input">
+<code class="descclassname">Inputs.</code><code class="descname">get_input</code><span class="sig-paren">(</span><em>input_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.get_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the input information for a specific input</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>input_name</strong> – The name of the input to retrieve</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary with the input</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="view-inputs">
+<h2>View Inputs<a class="headerlink" href="#view-inputs" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="input-info"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.view_inputs">
+<code class="descclassname">Inputs.</code><code class="descname">view_inputs</code><span class="sig-paren">(</span><em>single_input=None</em>, <em>print_format='table'</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.view_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a data from with the event info</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>single_input</strong> – string The name of a specific input to filter the results</li>
+<li><strong>print_format</strong> – string ‘table’ to print event info as tables or ‘json’ to print as dictionaries</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The list of input dictionaries</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="delete-input">
+<h2>Delete Input<a class="headerlink" href="#delete-input" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id3"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.delete_input">
+<code class="descclassname">Inputs.</code><code class="descname">delete_input</code><span class="sig-paren">(</span><em>input_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.delete_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an input. This can not be undone!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>input_name</strong> – The name of the input to delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="pause-input">
+<h2>Pause Input<a class="headerlink" href="#pause-input" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id4"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.pause_input">
+<code class="descclassname">Inputs.</code><code class="descname">pause_input</code><span class="sig-paren">(</span><em>input_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.pause_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pause the input from pulling data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>input_name</strong> – The name of the input to pause</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="resume-input">
+<h2>Resume Input<a class="headerlink" href="#resume-input" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id5"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.resume_input">
+<code class="descclassname">Inputs.</code><code class="descname">resume_input</code><span class="sig-paren">(</span><em>input_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.resume_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resume the input so it will pull date</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>input_name</strong> – The name of the input to resume pulling data</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="list-inputs">
+<h2>List Inputs<a class="headerlink" href="#list-inputs" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id6"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.list_inputs">
+<code class="descclassname">Inputs.</code><code class="descname">list_inputs</code><span class="sig-paren">(</span><em>add_quotes_commas=False</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.list_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints and/or returns a list of input names</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>print_lst</strong> – boolean True to print the list to the console</li>
+<li><strong>add_quotes_commas</strong> – boolean True to print the list to the console with single quotes around strings and commas between each name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of the names of inputs</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="list-tables">
+<h2>List Tables<a class="headerlink" href="#list-tables" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id7"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.list_tables">
+<code class="descclassname">Inputs.</code><code class="descname">list_tables</code><span class="sig-paren">(</span><em>input_name</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.list_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints and/or returns the list of tables in an input</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>single_input</strong> – string The input for which to print or return the tables</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The list if tables in an input</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="create-input-database">
+<h2>Create Input Database<a class="headerlink" href="#create-input-database" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id8"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.create_input_database">
+<code class="descclassname">Inputs.</code><code class="descname">create_input_database</code><span class="sig-paren">(</span><em>source_credentials</em>, <em>new_input_name</em>, <em>existing_input</em>, <em>tables_dict=None</em>, <em>auto_map=True</em>, <em>input_default_schema=None</em>, <em>replication_type='incremental_load'</em>, <em>batch_size=100000</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.create_input_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new input with a database as the source</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source_credentials</strong> – The database credentials and configuration for the source</li>
+<li><strong>new_input_name</strong> – The name of the new input</li>
+<li><strong>existing_input</strong> – The name of the existing input from which to copy the configuration</li>
+<li><strong>tables_dict</strong> – A dictionary containing the tables to replicate and the update indicator such as {“table_name”: “xmin::text::bigint”}</li>
+<li><strong>auto_map</strong> – True if the input should be auto-mapped</li>
+<li><strong>input_default_schema</strong> – The default schema for the data in the target database</li>
+<li><strong>replication_type</strong> – The type of replication to apply</li>
+<li><strong>batch_size</strong> – The number of rows to pull in each batch</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example database source credentials:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;server&#39;</span><span class="p">:</span> <span class="s1">&#39;server_name&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;schema&#39;</span><span class="p">:</span> <span class="s1">&#39;schema_name&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="s1">&#39;port&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="s1">&#39;database&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;db_type&#39;</span><span class="p">:</span> <span class="s1">&#39;psql&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;password&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="edit-input-configuration">
+<h2>Edit Input Configuration<a class="headerlink" href="#edit-input-configuration" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id9"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.edit_input_configuration">
+<code class="descclassname">Inputs.</code><code class="descname">edit_input_configuration</code><span class="sig-paren">(</span><em>input_name=None</em>, <em>field_to_edit=None</em>, <em>new_field_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.edit_input_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit a single field in an input configuration at a time</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input_name</strong> – The name of the input to edit</li>
+<li><strong>field_to_edit</strong> – The name of the field to edit</li>
+<li><strong>new_field_value</strong> – The new value for the field</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="add-table-to-input">
+<h2>Add Table to Input<a class="headerlink" href="#add-table-to-input" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id10"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.add_table_to_input">
+<code class="descclassname">Inputs.</code><code class="descname">add_table_to_input</code><span class="sig-paren">(</span><em>input_name</em>, <em>new_table_dict={}</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.add_table_to_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add tables to an existing input</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input_name</strong> – The name of the input to add tables to</li>
+<li><strong>new_table_dict</strong> – A dictionary with the tables to add and their update field such as  {“table_name”: “xmin::text::bigint”}</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="change-auto-mapping-mode">
+<h2>Change Auto Mapping Mode<a class="headerlink" href="#change-auto-mapping-mode" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id11"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.change_auto_mapping_mode">
+<code class="descclassname">Inputs.</code><code class="descname">change_auto_mapping_mode</code><span class="sig-paren">(</span><em>input_name=None</em>, <em>new_mapping_mode=False</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.change_auto_mapping_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit a single field in an input configuration at a time</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input_name</strong> – The name of the input to alter</li>
+<li><strong>new_mapping_mode</strong> – The new automapping mapping mode to set of True or False</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="add-template-to-parameter-configuration">
+<h2>Add Template to Parameter Configuration<a class="headerlink" href="#add-template-to-parameter-configuration" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id12"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.add_template_to_parameter_configuration">
+<code class="descclassname">Inputs.</code><code class="descname">add_template_to_parameter_configuration</code><span class="sig-paren">(</span><em>input_name</em>, <em>add_to_parameter</em>, <em>template</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.add_template_to_parameter_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a template to single parameter or a list of parameters in an input configuration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input_name</strong> – The input to add template to</li>
+<li><strong>add_to_parameter</strong> – a single parameter or a list of parameters that you want to add template to</li>
+<li><strong>template</strong> – e.g. ‘%Y-%m-%d’</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="edit-parameter-configuration">
+<h2>Edit Parameter Configuration<a class="headerlink" href="#edit-parameter-configuration" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id13"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.edit_parameter_configuration">
+<code class="descclassname">Inputs.</code><code class="descname">edit_parameter_configuration</code><span class="sig-paren">(</span><em>input_name</em>, <em>parameter_to_edit</em>, <em>value_to_set</em>, <em>new_value</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.edit_parameter_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>edit API parameter value, e.g. changing days past value from 100 to 10</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input_name</strong> – The input to make the change for</li>
+<li><strong>parameter_to_edit</strong> – a single parameter that you want to edit</li>
+<li><strong>value_to_set</strong> – name of the field you want to edit</li>
+<li><strong>new_value</strong> – new value you want to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="preview-input-changes">
+<h2>Preview Input Changes<a class="headerlink" href="#preview-input-changes" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id14"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.preview_input_changes">
+<code class="descclassname">Inputs.</code><code class="descname">preview_input_changes</code><span class="sig-paren">(</span><em>input</em>, <em>new_input</em>, <em>show_matching</em>, <em>show_changed</em>, <em>show_removed</em>, <em>show_added</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.preview_input_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes an original mapping and altered mapping and prints various views on the changes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input</strong> – A dictionary representing the current state of the mapping</li>
+<li><strong>new_input</strong> – An altered dictionary representing the changed state of the mapping</li>
+<li><strong>show_matching</strong> – Show the key value pairs that match between the two mappings</li>
+<li><strong>show_changed</strong> – Show the key value pairs that have been changed between the two mappings</li>
+<li><strong>show_removed</strong> – Show the key value pairs that were removed from the current state of the mapping</li>
+<li><strong>show_added</strong> – Show the key value paids that were added to the changed state of the mapping</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="apply-input-changes">
+<h2>Apply Input Changes<a class="headerlink" href="#apply-input-changes" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id15"></span><dl class="method">
+<dt id="managealooma.inputs.Inputs.apply_input_changes">
+<code class="descclassname">Inputs.</code><code class="descname">apply_input_changes</code><span class="sig-paren">(</span><em>input</em>, <em>print_message</em><span class="sig-paren">)</span><a class="headerlink" href="#managealooma.inputs.Inputs.apply_input_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the input changes in the Alooma API</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input</strong> – The new input to set</li>
+<li><strong>print_message</strong> – A message to print after a successful change</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mappings.html" class="btn btn-neutral float-right" title="Mappings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="events.html" class="btn btn-neutral float-left" title="Events" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jay Rosenthal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

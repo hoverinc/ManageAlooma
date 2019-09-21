@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &amp; Getting Started &mdash; managealooma 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Column DDL" href="column_ddl.html" />
+    <link rel="prev" title="Help" href="help.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> managealooma
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction &amp; Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#local-configuration">Local Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-an-event">Test an Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-the-api">Use the API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="column_ddl.html">Column DDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consolidations.html">Consolidations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mappings.html">Mappings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Secrets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_functions.html">Transformation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_test.html">Transformation Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">managealooma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction &amp; Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-getting-started">
+<h1>Introduction &amp; Getting Started<a class="headerlink" href="#introduction-getting-started" title="Permalink to this headline">¶</a></h1>
+<p>This document will take you through setting up a local repo, testing your transformations locally, using the transformation functions in the managealooma package, and using one of management classes in the managealooma package.</p>
+<div class="section" id="installation">
+<span id="introduction-and-getting-started"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>This package is available from the <a class="reference external" href="http://pypi.python.org/pypi/managealooma">Python Package Index</a>. If you have <a class="reference external" href="https://pip.pypa.io/">pip</a> you should be able to do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install managealooma
+</pre></div>
+</div>
+</div>
+<div class="section" id="local-configuration">
+<span id="id1"></span><h2>Local Configuration<a class="headerlink" href="#local-configuration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create a directory for your code and a subdirectory for your Alooma code</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir alooma alooma/code
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>In <code class="file docutils literal notranslate"><span class="pre">alooma/</span></code> create <code class="file docutils literal notranslate"><span class="pre">event_sample.py</span></code>, <code class="file docutils literal notranslate"><span class="pre">event_test.py</span></code>, and <code class="file docutils literal notranslate"><span class="pre">manage.py</span></code></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch alooma/event_sample.py alooma/event_test.py alooma/manage.py
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>In <code class="file docutils literal notranslate"><span class="pre">alooma/code</span></code> create <code class="file docutils literal notranslate"><span class="pre">init.py</span></code> and <code class="file docutils literal notranslate"><span class="pre">code_engine.py</span></code></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch alooma/code/__init__.py alooma/code/code_engine.py
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Check that your files match this directory structure:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alooma/
+    alooma_code/
+        __init__.py
+        code_engine.py
+    event_sample.py
+    event_test.py
+    manage.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-an-event">
+<span id="id2"></span><h2>Test an Event<a class="headerlink" href="#test-an-event" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Each Alooma event is a dictionary. Alooma takes your data and adds <cite>_metadata</cite> fields that help you manage the data. Add the following sample event to <code class="file docutils literal notranslate"><span class="pre">event_sample.py</span></code>:</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;myField&quot;</span><span class="p">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-01 00:00:00&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;xmin::text::bigint&quot;</span><span class="p">:</span> <span class="mi">123456789</span><span class="p">,</span>
+         <span class="s2">&quot;aNumber&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;aDictionary&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span> <span class="s2">&quot;Some Stuff&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;two&quot;</span><span class="p">:</span> <span class="s2">&quot;More Stuff&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;three&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Another dict&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Inside Three&quot;</span><span class="p">:</span> <span class="mf">3.3</span><span class="p">,</span>
+                                                    <span class="s2">&quot;More Inside Three&quot;</span><span class="p">:</span> <span class="mf">3.4</span><span class="p">}</span>
+                                   <span class="p">},</span>
+                         <span class="p">},</span>
+         <span class="s2">&quot;_metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s2">&quot;@uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;event_type&quot;</span><span class="p">:</span> <span class="s2">&quot;my_schema.my_table&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;input_label&quot;</span><span class="p">:</span> <span class="s2">&quot;my_input&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;@parent_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+         <span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Each of these samples will run through the code you have in <code class="file docutils literal notranslate"><span class="pre">code_engine.py</span></code> file.  Let’s add this code to <code class="file docutils literal notranslate"><span class="pre">code_engine.py</span></code> to change the keys of the sample event from camelCase to snake_case.</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">managealooma</span> <span class="kn">import</span> <span class="n">convert_all_event_fields_to_snake_case</span>
+
+<span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+
+    <span class="c1"># Converts the all keys of the event dictionary to snake_case</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">convert_all_event_fields_to_snake_case</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">event</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Now we need code that will run the event in <code class="file docutils literal notranslate"><span class="pre">event_sample.py</span></code> through the code in <code class="file docutils literal notranslate"><span class="pre">code_engine.py</span></code>. Add the code below to <code class="file docutils literal notranslate"><span class="pre">event_test.py</span></code></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The TransformationTest class takes an event and run it through your transformation code</span>
+<span class="kn">from</span> <span class="nn">managealooma</span> <span class="kn">import</span> <span class="n">TransformationTest</span>
+
+<span class="c1"># Imports your local transformation code. It will also import any submodules in the directory.</span>
+<span class="kn">import</span> <span class="nn">code.code_engine</span> <span class="kn">as</span> <span class="nn">ce</span>
+
+<span class="c1"># This imports the sample event for testing.</span>
+<span class="kn">from</span> <span class="nn">event_sample</span> <span class="kn">import</span> <span class="n">event</span>
+
+<span class="c1"># Instantiate the TransformationTest class and test a single event</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">TransformationTest</span><span class="p">(</span><span class="n">api</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">code_package</span><span class="o">=</span><span class="n">ce</span><span class="p">,</span> <span class="n">preview_full_events</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">preview_difference_dicts</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">local_or_api</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">)</span>
+<span class="n">T</span><span class="o">.</span><span class="n">test_single_event</span><span class="p">(</span><span class="n">sample</span><span class="o">=</span><span class="n">event</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Now run the file and the event will print to your console before and after the transformation</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python event_test.py
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>You can change the params in TransformationTest to summarize the diffs in the event instead of viewing the entire before and after</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">TransformationTest</span><span class="p">(</span><span class="n">api</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">code_package</span><span class="o">=</span><span class="n">ce</span><span class="p">,</span> <span class="n">preview_full_events</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">preview_difference_dicts</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">local_or_api</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>You can add as many transformations as you want to <code class="file docutils literal notranslate"><span class="pre">code_engine.py</span></code>.  Let’s add more transformations from <cite>managealooma.transformation_functions</cite>.  Change your <code class="file docutils literal notranslate"><span class="pre">code_engine.py</span></code> to this:</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">managealooma</span> <span class="kn">import</span> <span class="n">convert_all_event_fields_to_snake_case</span><span class="p">,</span> <span class="n">add_composite_key</span><span class="p">,</span> <span class="n">map_value_in_list_to_dictionary_key</span><span class="p">,</span> <span class="n">flatten_json</span>
+
+<span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="c1"># Converts the all keys of the event dictionary to snake_case</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">convert_all_event_fields_to_snake_case</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+    <span class="c1"># More transformations. Read the docs to see all the options or write your own!</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">flatten_json</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">field_list</span><span class="o">=</span><span class="s1">&#39;a_dictionary&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keep_original</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">dump_to_string</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">add_composite_key</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">field_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;created_at&#39;</span><span class="p">],</span> <span class="n">key_name</span><span class="o">=</span><span class="s1">&#39;id_created_datetime&#39;</span><span class="p">)</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">map_value_in_list_to_dictionary_key</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">mapping_dict_with_lists</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;one_to_three&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;four_to_six&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]},</span> <span class="n">existing_column</span><span class="o">=</span><span class="s1">&#39;a_number&#39;</span><span class="p">,</span> <span class="n">new_column</span><span class="o">=</span><span class="s1">&#39;number_category&#39;</span><span class="p">,</span> <span class="n">allow_nulls</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">passthrough</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">event</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>Run that file 1 more time to see the transformations</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python event_test.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-the-api">
+<span id="id3"></span><h2>Use the API<a class="headerlink" href="#use-the-api" title="Permalink to this headline">¶</a></h2>
+<p>Alooma has a robust API that will let you programmatically manage the tool.  The <cite>managealooma</cite> package contains main functions to help utilize these features. Typical usage will often mean running the code with <cite>apply_changes=False</cite> to visually inspect your changes first. Then you can set <cite>apply_changes=True</cite> to execute your adjustments.  This example will walk you through changing the mapping mode for an event.</p>
+<p>In this example we’ll only edit the  <code class="file docutils literal notranslate"><span class="pre">manage.py</span></code> file.
+1. Add imports for <cite>alooma</cite>, <cite>os</cite>, and the mappings class from <cite>managealooma</cite></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">alooma</span>
+<span class="kn">from</span> <span class="nn">managealooma</span> <span class="kn">import</span> <span class="n">Mappings</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Add your credentials for Alooma and instantiate the <cite>api</cite>.</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alooma_credentials</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;account_name&#39;</span><span class="p">:</span> <span class="s1">&#39;ALOOMA_ACCOUNT_NAME&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ALOOMA_API_KEY&#39;</span><span class="p">)}</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">alooma</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">alooma_credentials</span><span class="p">[</span><span class="s2">&quot;api_key&quot;</span><span class="p">],</span> <span class="n">account_name</span><span class="o">=</span><span class="n">alooma_credentials</span><span class="p">[</span><span class="s2">&quot;account_name&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Add code to instantiate the <cite>Mapping</cite> class and use the <cite>change_mapping_mode</cite> function. Change <cite>MY_EVENT.NAME</cite> to the name of one of your events.</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">Mappings</span><span class="p">(</span><span class="n">api</span><span class="o">=</span><span class="n">api</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;MY_EVENT.NAME&#39;</span><span class="p">,</span> <span class="n">preview_full</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">preview_changes</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">apply_changes</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">pprint_indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pprint_width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">pprint_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">M</span><span class="o">.</span><span class="n">change_mapping_mode</span><span class="p">(</span><span class="n">new_mapping_mode</span><span class="o">=</span><span class="s1">&#39;STRICT&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Now your file should be complete like this:</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">alooma</span>
+<span class="kn">from</span> <span class="nn">managealooma</span> <span class="kn">import</span> <span class="n">Mappings</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span>
+
+<span class="n">alooma_credentials</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;account_name&#39;</span><span class="p">:</span> <span class="s1">&#39;ALOOMA_ACCOUNT_NAME&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ALOOMA_API_KEY&#39;</span><span class="p">)}</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">alooma</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">alooma_credentials</span><span class="p">[</span><span class="s2">&quot;api_key&quot;</span><span class="p">],</span> <span class="n">account_name</span><span class="o">=</span><span class="n">alooma_credentials</span><span class="p">[</span><span class="s2">&quot;account_name&quot;</span><span class="p">])</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">Mappings</span><span class="p">(</span><span class="n">api</span><span class="o">=</span><span class="n">api</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;MY_EVENT.NAME&#39;</span><span class="p">,</span> <span class="n">preview_full</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">preview_changes</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">apply_changes</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">pprint_indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pprint_width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">pprint_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">M</span><span class="o">.</span><span class="n">change_mapping_mode</span><span class="p">(</span><span class="n">new_mapping_mode</span><span class="o">=</span><span class="s1">&#39;STRICT&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Run the file and you’ll see the full mapping printed with before and after changes.</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python manage.py
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>It’s a little hard to see the mapping moode in the mapping dictionaries. Let’s change the print parameters to only see the changes.</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">Mappings</span><span class="p">(</span><span class="n">api</span><span class="o">=</span><span class="n">api</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;MY_EVENT.NAME&#39;</span><span class="p">,</span> <span class="n">preview_full</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">preview_changes</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">apply_changes</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">pprint_indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pprint_width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">pprint_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>Now make sure to change the mapping mode to a new value</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The mapping code can be AUTO_MAP, STRICT, or FLEXIBLE. Try changing the value to a different value than the current setting</span>
+<span class="n">M</span><span class="o">.</span><span class="n">change_mapping_mode</span><span class="p">(</span><span class="n">new_mapping_mode</span><span class="o">=</span><span class="s1">&#39;STRICT&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li>Finally, if you want to execute these changes then sett <cite>apply_changes=True</cite></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">Mappings</span><span class="p">(</span><span class="n">api</span><span class="o">=</span><span class="n">api</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;MY_EVENT.NAME&#39;</span><span class="p">,</span> <span class="n">preview_full</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">preview_changes</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">apply_changes</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">pprint_indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pprint_width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">pprint_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="column_ddl.html" class="btn btn-neutral float-right" title="Column DDL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="help.html" class="btn btn-neutral float-left" title="Help" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jay Rosenthal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>managealooma - Programmatically manage the Alooma ETL tool &mdash; managealooma 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> managealooma
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="column_ddl.html">Column DDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consolidations.html">Consolidations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mappings.html">Mappings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Secrets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_functions.html">Transformation Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_test.html">Transformation Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">managealooma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>managealooma - Programmatically manage the Alooma ETL tool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managealooma-programmatically-manage-the-alooma-etl-tool">
+<h1>managealooma - Programmatically manage the Alooma ETL tool<a class="headerlink" href="#managealooma-programmatically-manage-the-alooma-etl-tool" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-manage-alooma">
+<h2>About Manage Alooma<a class="headerlink" href="#about-manage-alooma" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">managealooma</span></code> is a wrapper for the Alooma ETL tool API that makes it easy to programmatically manage the tool and provides functions for transforming events.</p>
+<ul class="simple">
+<li>Docs: <a class="reference external" href="http://managealooma.readthedocs.org/">http://managealooma.readthedocs.org/</a></li>
+<li>Source: <a class="reference external" href="https://github.com/hoverinc/managealooma">https://github.com/hoverinc/managealooma</a></li>
+<li>Download: <a class="reference external" href="http://pypi.python.org/pypi/managealooma">http://pypi.python.org/pypi/managealooma</a></li>
+</ul>
+</div>
+<div class="section" id="about-alooma">
+<h2>About Alooma<a class="headerlink" href="#about-alooma" title="Permalink to this headline">¶</a></h2>
+<p>Alooma is an ETL tool for building out datawarehouses. Alooma does the basic tasks of connecting to sources for you such as replicating a database, receiving a webhook or  connecting to a cloud app API. Alooma also inserts your data to a datawarehouse such as Snowflake, Redshift, or Bigquery.  In between those steps Alooma allows you to transform your data any way you want using real Python code.  This package contains may functions to make programmatic management of Alooma easy!</p>
+</div>
+</div>
+<div class="section" id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#local-configuration">Local Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#test-an-event">Test an Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#use-the-api">Use the API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="column_ddl.html">Column DDL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="column_ddl.html#convert-tuple-to-list">Convert Tuple to List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="column_ddl.html#create-ddl-statements">Create DDL Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="column_ddl.html#add-column">Add Column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="column_ddl.html#change-column-data-type">Change Column Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="column_ddl.html#combine-columns">Combine Columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="column_ddl.html#drop-column">Drop Column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="column_ddl.html#rename-column">Rename Column</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="consolidations.html">Consolidations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="consolidations.html#get-schedule-queries">Get Schedule Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consolidations.html#scheduled-query-table">Scheduled Query Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consolidations.html#create-consolidation">Create Consolidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consolidations.html#get-scheduled-query-for-event">Get Scheduled Query For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consolidations.html#view-schedule-query-for-event">View Schedule Query For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consolidations.html#remove-schedule-query">Remove Schedule Query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consolidations.html#remove-scheduled-query-for-event">Remove Scheduled Query For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consolidations.html#change-scheduled-query-frequency-for-event">Change Scheduled Query Frequency For Event</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="events.html#print-sorted-list">Print Sorted List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#get-all-events">Get All Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#view-events">View Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#list-events">List Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#delete-event">Delete Event</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#print-sorted-list">Print Sorted List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#get-all-inputs">Get All Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#get-input">Get Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#view-inputs">View Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#delete-input">Delete Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#pause-input">Pause Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#resume-input">Resume Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#list-inputs">List Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#list-tables">List Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#create-input-database">Create Input Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#edit-input-configuration">Edit Input Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#add-table-to-input">Add Table to Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#change-auto-mapping-mode">Change Auto Mapping Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#add-template-to-parameter-configuration">Add Template to Parameter Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#edit-parameter-configuration">Edit Parameter Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#preview-input-changes">Preview Input Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html#apply-input-changes">Apply Input Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mappings.html">Mappings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#get-mapping-for-event">Get Mapping For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#id2">Get Mapping For Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#change-mapping-mode">Change Mapping Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#change-mapping-consolidation-settings">Change Mapping Consolidation Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#change-mapping-consolidation-key">Change Mapping Consolidation Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#change-mapping-to-use-log">Change Mapping to Use Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#change-mapping-for-manual-consolidation-creation">Change Mapping for Manual Consolidation Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#delete-field-from-mapping">Delete Field From Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#change-field-mapping-settings">Change Field Mapping Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#change-field-varchar-length">Change Field Varchar Length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#change-field-null-constraint">Change Field Null Constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#check-consolidation-uses-log">Check Consolidation Uses Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#copy-mapping">Copy Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#set-mapping-from-existing-mapping">Set Mapping from Existing Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#add-field-to-mapping">Add Field To Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#preview-mapping-changes">Preview Mapping Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#apply-mapping-changes">Apply Mapping Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappings.html#remove-unmapped-fields-and-clear-table-stats">Remove Unmapped Fields and Clear Table Stats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#build-sample-file-path-and-file-name">Build Sample File Path and File Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#print-samples">Print Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#get-samples-for-event-from-alooma-api">Get Samples for Event from Alooma API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#view-samples-for-event-from-alooma-api">View Samples for Event from Alooma API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#get-samples-from-file">Get Samples from File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#get-samples-from-saved-sample-files">Get Samples from Saved Sample Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#view-samples-from-file">View Samples from File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#save-alooma-samples-to-files">Save Alooma Samples to Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#write-alooma-samples-to-files">Write Alooma Samples to Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#get-sample-from-any-api">Get Sample from Any API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#get-sample-from-postgresql-database">Get Sample from PostgreSQL Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Secrets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secrets.html#set-secrets">Set Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secrets.html#get-secrets">Get Secrets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secrets.html#delete-secrets">Delete Secrets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system.html#get-status-codes">Get Status Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="system.html#status-code-info">Status Code Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="system.html#system-metric-info">System Metric Info</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_functions.html">Transformation Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#add-column-based-on-null">Add Column Based On Null</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#add-columns-with-default">Add Columns with Default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#add-composite-key">Add Composite Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#add-duplicate-fields">Add Duplicate Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#add-suffix">Add Suffix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#convert-all-event-fields-to-snake-case">Convert All Event Fields to Snake Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#convert-dictionary-fields-to-string">Convert Dictionary Fields to String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#convert-null-to-zero">Convert Null to Zero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#convert-spaces-and-special-characters-to-underscore">Convert Spaces and Special Characters to Underscore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#convert-string-to-snake-case">Convert String to Snake Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#convert-values-to-none">Convert Values to None</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#convert-empty-value-to-none">Convert Empty Value to None</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#convert-event-type-case">Convert Event Type Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#flatten-json">Flatten JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#flatten-json-1-level">Flatten JSON 1 Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#map-key-in-dictionary-to-value">Map Key in Dictionary to Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#map-value-in-list-to-dictionary-key">Map Value in List to Dictionary Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#mark-for-delete">Mark for Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#parse-list-of-json-and-concat">Parse List of JSON and Concat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#remove-duplicate-field">Remove Duplicate Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#remove-outer-key">Remove Outer Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#remove-starting-characters-from-keys">Remove Starting Characters from Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#remove-whitespace">Remove Whitespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#rename-fields">Rename Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#split-event-to-multiple-events">Split Event to Multiple Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#split-field-list-to-multiple-events">Split Field List to Multiple Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_functions.html#whitelist-or-blacklist-columns">Whitelist or Blacklist Columns</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transformation_test.html">Transformation Test</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformation_test.html#test-single-event">Test Single Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_test.html#loop-through-events-to-test">Loop Through Events to Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformation_test.html#test-all-events">Test All Events</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="credits.html#contributors">Contributors</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jay Rosenthal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
