@@ -84,16 +84,6 @@ Add Field To Mapping
 .. _add_field_to_mapping:
 .. automethod:: managealooma.mappings.Mappings.add_field_to_mapping
 
-Preview Mapping Changes
------------------------
-.. _preview_mapping_changes:
-.. automethod:: managealooma.mappings.Mappings.preview_mapping_changes
-
-Apply Mapping Changes
----------------------
-.. _apply_mapping_changes:
-.. automethod:: managealooma.mappings.Mappings.apply_mapping_changes
-
 Remove Unmapped Fields and Clear Table Stats
 --------------------------------------------
 .. _remove_unmapped_fields_and_clear_table_stats:

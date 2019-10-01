@@ -13,7 +13,7 @@ class Mappings:
 
         :param api: The Alooma API client authentication
         :param event_name: The name of the event to view or change settings for
-        :param preview_full: Prints the mapping or mapping changes if True
+        :param preview_full: Prints the mapping or mapping changes if True. The default is True.
         :param preview_changes: Prints the changes in the mapping by category if True
         :param apply_changes: Executes the mapping changes if True
         :param pprint_indent: The indent value to pprint dictionaries
@@ -121,8 +121,11 @@ class Mappings:
         mapping = self.get_mapping_for_event()
         new_mapping = copy.deepcopy(mapping)
 
-        # Adjust the copied mapping
+        # Adjust the copied mapping to remove the fields
         new_mapping.pop('fields', None)
+
+        if self.preview_changes and not self.preview_full:
+            raise Exception('You must specify preview_changes=True to see the mapping. This function does not change the mapping and preview_changes is ignored')
 
         # Print the dictionary with or without the fields
         if view_field_mappings:
@@ -166,8 +169,8 @@ class Mappings:
         new_mapping['mappingMode'] = new_mapping_mode
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING MODE SET")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING MODE SET")
 
         return new_mapping
 
@@ -213,8 +216,8 @@ class Mappings:
         new_mapping['consolidation']['consolidationKeys'] = key_list
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="UPDATED CONSOLIDATION")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="UPDATED CONSOLIDATION")
 
         return new_mapping
 
@@ -251,8 +254,8 @@ class Mappings:
         new_mapping['consolidation']['consolidationKeys'] = new_consolidation_key
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="CONSOLIDATION KEY SET")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="CONSOLIDATION KEY SET")
 
         return new_mapping
 
@@ -295,8 +298,8 @@ class Mappings:
         new_mapping['mapping']['tableName'] = table_name_with_log
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="LOG TABLE SET")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="LOG TABLE SET")
 
         return new_mapping
 
@@ -379,8 +382,8 @@ class Mappings:
         new_mapping['mapping']['tableName'] = mapping_table_name
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="UPDATED CONSOLIDATION")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="UPDATED CONSOLIDATION")
 
         return new_mapping
 
@@ -454,8 +457,8 @@ class Mappings:
         new_mapping['fields'] = new_fields
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=False, show_removed=True, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message=f'REMOVED FILE {field_name} FROM {self.event_name}')
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=False, show_removed=True, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message=f'REMOVED FILE {field_name} FROM {self.event_name}')
 
         return new_mapping
 
@@ -520,8 +523,8 @@ class Mappings:
                 field['mapping']['columnType']['nonNull'] = non_null
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING SET")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING SET")
 
         return new_mapping
 
@@ -570,8 +573,8 @@ class Mappings:
                 field['mapping']['columnType']['length'] = new_length
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="CHANGED FILED")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="CHANGED FILED")
 
         return new_mapping
 
@@ -625,8 +628,8 @@ class Mappings:
                 f['mapping']['columnType']['nonNull'] = nonnull
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="ADJUSTED NULL CONSTRAINT")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="ADJUSTED NULL CONSTRAINT")
 
         return new_mapping
 
@@ -663,8 +666,8 @@ class Mappings:
         new_mapping['name'] = new_event
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="MAPPING COPIED")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="MAPPING COPIED")
 
         return new_mapping
 
@@ -697,8 +700,8 @@ class Mappings:
         new_mapping['schemaUrls'] = []
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="MAPPING COPIED")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="MAPPING COPIED")
 
         return new_mapping
 
@@ -883,12 +886,12 @@ class Mappings:
         new_mapping['fields'].append(new_field)
 
         # Print and apply the mapping changes
-        self.preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=False, show_removed=False, show_added=True)
-        self.apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING SET")
+        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=False, show_removed=False, show_added=True)
+        self._apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING SET")
 
         return new_mapping
 
-    def preview_mapping_changes(self, mapping, new_mapping, show_matching, show_changed, show_removed, show_added):
+    def _preview_mapping_changes(self, mapping, new_mapping, show_matching, show_changed, show_removed, show_added):
         """ Takes an original mapping and altered mapping and prints various views on the changes
 
         :param mapping: A dictionary representing the current state of the mapping
@@ -913,7 +916,7 @@ class Mappings:
 
         return None
 
-    def apply_mapping_changes(self, mapping, print_message):
+    def _apply_mapping_changes(self, mapping, print_message):
         """ Apply the mapping changes in the Alooma API
 
         :param mapping: The new mapping to set
