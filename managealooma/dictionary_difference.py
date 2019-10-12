@@ -29,7 +29,6 @@ class DictionaryDifferences:
             print('\n' * 2)
             print('ORIGINAL DICTIONARY'.center(200, '-'))
             pprint.pprint(self.old_dictionary, indent=self.pprint_indent, width=self.pprint_width, depth=self.pprint_depth)
-
             print('\n' * 2)
             print('ALTERED DICTIONARY'.center(200, '-'))
             pprint.pprint(self.old_dictionary, indent=self.pprint_indent, width=self.pprint_width, depth=self.pprint_depth)
@@ -40,7 +39,7 @@ class DictionaryDifferences:
         elif self.new_dictionary is not None:
             print('\n' * 2)
             print('DICTIONARY'.center(200, '-'))
-            pprint.pprint(self.old_dictionary, indent=self.pprint_indent, width=self.pprint_width, depth=self.pprint_depth)
+            pprint.pprint(self.new_dictionary, indent=self.pprint_indent, width=self.pprint_width, depth=self.pprint_depth)
 
     def show_dictionary_differences(self, show_matching=True, show_changed=True, show_removed=True, show_added=True):
         """ Shows the matching, changed, removed, and added dictionary keys and values
