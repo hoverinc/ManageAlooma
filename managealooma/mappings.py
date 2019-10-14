@@ -7,7 +7,10 @@ from .dictionary_difference import DictionaryDifferences
 
 class Mappings:
 
-    def __init__(self, api, event_name, preview_full=True, preview_changes=True, apply_changes=False, pprint_indent=2, pprint_width=250, pprint_depth=5):
+    def __init__(
+            self, api, event_name, preview_full=True, preview_changes=True,
+            apply_changes=False, pprint_indent=2, pprint_width=250,
+            pprint_depth=5):
         """View and change Alooma mappings. Mappings are the conversion of a dictionary to a flattened table structure.
         The class is initiated with the following variables:
 
@@ -125,15 +128,26 @@ class Mappings:
         new_mapping.pop('fields', None)
 
         if self.preview_changes and not self.preview_full:
-            raise Exception('You must specify preview_changes=True to see the mapping. This function does not change the mapping and preview_changes is ignored')
+            raise Exception(
+                'You must specify preview_changes=True to see the mapping. This function does not change the mapping and preview_changes is ignored')
 
         # Print the dictionary with or without the fields
         if view_field_mappings:
-            DD = DictionaryDifferences(old_dictionary=mapping, new_dictionary=None, pprint_indent=self.pprint_indent, pprint_width=self.pprint_width, pprint_depth=self.pprint_depth)
+            DD = DictionaryDifferences(
+                old_dictionary=mapping,
+                new_dictionary=None,
+                pprint_indent=self.pprint_indent,
+                pprint_width=self.pprint_width,
+                pprint_depth=self.pprint_depth)
             DD.show_dictionary_all()
             return mapping
         else:
-            DD = DictionaryDifferences(old_dictionary=None, new_dictionary=new_mapping, pprint_indent=self.pprint_indent, pprint_width=self.pprint_width, pprint_depth=self.pprint_depth)
+            DD = DictionaryDifferences(
+                old_dictionary=None,
+                new_dictionary=new_mapping,
+                pprint_indent=self.pprint_indent,
+                pprint_width=self.pprint_width,
+                pprint_depth=self.pprint_depth)
             DD.show_dictionary_all()
             return new_mapping
 
@@ -169,12 +183,22 @@ class Mappings:
         new_mapping['mappingMode'] = new_mapping_mode
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING MODE SET")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="NEW MAPPING MODE SET")
 
         return new_mapping
 
-    def change_mapping_consolidation_settings(self, consolidation_schema, consolidation_table_name, consolidation_keys):
+    def change_mapping_consolidation_settings(
+            self, consolidation_schema, consolidation_table_name,
+            consolidation_keys):
         """ Updates the consolidation information for an event
 
         :param consolidation_schema: The schema of consolidated table
@@ -207,7 +231,7 @@ class Mappings:
         new_mapping = copy.deepcopy(mapping)
 
         # Adjust the copied mapping
-        if type(consolidation_keys) is not list:
+        if not isinstance(consolidation_keys, list):
             key_list = []
             key_list.append(consolidation_keys)
 
@@ -216,8 +240,16 @@ class Mappings:
         new_mapping['consolidation']['consolidationKeys'] = key_list
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="UPDATED CONSOLIDATION")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="UPDATED CONSOLIDATION")
 
         return new_mapping
 
@@ -254,8 +286,16 @@ class Mappings:
         new_mapping['consolidation']['consolidationKeys'] = new_consolidation_key
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="CONSOLIDATION KEY SET")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="CONSOLIDATION KEY SET")
 
         return new_mapping
 
@@ -298,13 +338,22 @@ class Mappings:
         new_mapping['mapping']['tableName'] = table_name_with_log
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="LOG TABLE SET")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="LOG TABLE SET")
 
         return new_mapping
 
-    def change_mapping_for_manual_consolidation_creation(self, consolidation_schema,
-                                                         consolidation_table_name, consolidation_keys, case='UPPER'):
+    def change_mapping_for_manual_consolidation_creation(
+            self, consolidation_schema, consolidation_table_name,
+            consolidation_keys, case='UPPER'):
         """ Updates the mapping after creating the log table manually
 
         :param consolidation_schema: The schema of consolidated table
@@ -359,7 +408,7 @@ class Mappings:
         new_mapping = copy.deepcopy(mapping)
 
         # Adjust the copied mapping
-        if type(consolidation_keys) is not list:
+        if not isinstance(consolidation_keys, list):
             key_list = []
             key_list.append(consolidation_keys)
 
@@ -368,12 +417,14 @@ class Mappings:
             key_list = [k.upper() for k in key_list]
             consolidation_schema = consolidation_schema.upper()
             consolidation_table_name = consolidation_table_name.upper()
-            mapping_table_name = mapping['mapping']['tableName'].upper() + '_LOG'
+            mapping_table_name = mapping['mapping']['tableName'].upper(
+            ) + '_LOG'
         elif case.lower() == 'lower':
             key_list = [k.lower() for k in key_list]
             consolidation_schema = consolidation_schema.lower()
             consolidation_table_name = consolidation_table_name.lower()
-            mapping_table_name = mapping['mapping']['tableName'].lower() + '_log'
+            mapping_table_name = mapping['mapping']['tableName'].lower(
+            ) + '_log'
 
         # Set the new fields with the default case of UPPER
         new_mapping['consolidation']['consolidatedSchema'] = consolidation_schema.upper()
@@ -382,8 +433,16 @@ class Mappings:
         new_mapping['mapping']['tableName'] = mapping_table_name
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="UPDATED CONSOLIDATION")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="UPDATED CONSOLIDATION")
 
         return new_mapping
 
@@ -453,16 +512,26 @@ class Mappings:
         new_mapping = copy.deepcopy(mapping)
 
         # Adjust the copied mapping
-        new_fields = [f for f in mapping['fields'] if f['fieldName'] != field_name]
+        new_fields = [f for f in mapping['fields']
+                      if f['fieldName'] != field_name]
         new_mapping['fields'] = new_fields
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=False, show_removed=True, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message=f'REMOVED FILE {field_name} FROM {self.event_name}')
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=False,
+            show_removed=True,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message=f'REMOVED FILE {field_name} FROM {self.event_name}')
 
         return new_mapping
 
-    def change_field_mapping_settings(self, field_name, new_data_type, truncate=False, non_null=False):
+    def change_field_mapping_settings(
+            self, field_name, new_data_type, truncate=False, non_null=False):
         """ Updates a single filed in a mapping
 
         :param field_name: The field name to alter
@@ -509,7 +578,7 @@ class Mappings:
 
         # Adjust the copied mapping
         if 'VARCHAR' in new_data_type.upper():
-            new_length = re.search('(\d+)', new_data_type).group(0)
+            new_length = re.search(r'(\d+)', new_data_type).group(0)
             new_data_type = 'VARCHAR'
         else:
             new_length = None
@@ -523,8 +592,16 @@ class Mappings:
                 field['mapping']['columnType']['nonNull'] = non_null
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING SET")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="NEW MAPPING SET")
 
         return new_mapping
 
@@ -573,8 +650,16 @@ class Mappings:
                 field['mapping']['columnType']['length'] = new_length
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="CHANGED FILED")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="CHANGED FILED")
 
         return new_mapping
 
@@ -628,8 +713,16 @@ class Mappings:
                 f['mapping']['columnType']['nonNull'] = nonnull
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="ADJUSTED NULL CONSTRAINT")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="ADJUSTED NULL CONSTRAINT")
 
         return new_mapping
 
@@ -645,7 +738,11 @@ class Mappings:
 
         mapping = self.get_mapping_for_event()
         uses_log = '_LOG' in mapping['mapping']['tableName'].upper()
-        print(self.event_name, mapping['consolidation']['consolidationKeys'], mapping['mapping']['tableName'], uses_log)
+        print(
+            self.event_name,
+            mapping['consolidation']['consolidationKeys'],
+            mapping['mapping']['tableName'],
+            uses_log)
 
         return uses_log
 
@@ -666,13 +763,21 @@ class Mappings:
         new_mapping['name'] = new_event
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="MAPPING COPIED")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="MAPPING COPIED")
 
         return new_mapping
 
-    def set_mapping_from_existing_mapping(self, new_event_name, new_schema, new_table,
-                                          new_input_label):
+    def set_mapping_from_existing_mapping(
+            self, new_event_name, new_schema, new_table, new_input_label):
         """ Takes the mapping from the event the class is instantiated with event and uses it to set a new mapping
 
         :param new_event_name: The event for which to set the new mapping
@@ -700,13 +805,22 @@ class Mappings:
         new_mapping['schemaUrls'] = []
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=True, show_removed=False, show_added=False)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="MAPPING COPIED")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=True,
+            show_removed=False,
+            show_added=False)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="MAPPING COPIED")
 
         return new_mapping
 
-    def add_field_to_mapping(self, field_name, column_name, data_type, precision=38, scale=0,
-                             length=16777216, truncate=False, non_null=False):
+    def add_field_to_mapping(
+            self, field_name, column_name, data_type, precision=38, scale=0,
+            length=16777216, truncate=False, non_null=False):
         """ Adds a single field without sub-fields to the mapping. Works for Snowflake data types only.
 
         :param field_name: The field name to add
@@ -826,7 +940,8 @@ class Mappings:
 
             if length > 16777216:
                 raise Exception(
-                    'Max varchar length is 16777216. You are not allowed to set a varchar of %s' % str(length))
+                    'Max varchar length is 16777216. You are not allowed to set a varchar of %s' %
+                    str(length))
 
             new_field = {'fieldName': field_name,
                          'fields': [],
@@ -886,12 +1001,22 @@ class Mappings:
         new_mapping['fields'].append(new_field)
 
         # Print and apply the mapping changes
-        self._preview_mapping_changes(mapping=mapping, new_mapping=new_mapping, show_matching=False, show_changed=False, show_removed=False, show_added=True)
-        self._apply_mapping_changes(mapping=new_mapping, print_message="NEW MAPPING SET")
+        self._preview_mapping_changes(
+            mapping=mapping,
+            new_mapping=new_mapping,
+            show_matching=False,
+            show_changed=False,
+            show_removed=False,
+            show_added=True)
+        self._apply_mapping_changes(
+            mapping=new_mapping,
+            print_message="NEW MAPPING SET")
 
         return new_mapping
 
-    def _preview_mapping_changes(self, mapping, new_mapping, show_matching, show_changed, show_removed, show_added):
+    def _preview_mapping_changes(
+            self, mapping, new_mapping, show_matching, show_changed,
+            show_removed, show_added):
         """ Takes an original mapping and altered mapping and prints various views on the changes
 
         :param mapping: A dictionary representing the current state of the mapping
@@ -904,7 +1029,12 @@ class Mappings:
         """
 
         # Instantiate the Dictionary Difference Class
-        DD = DictionaryDifferences(old_dictionary=mapping, new_dictionary=new_mapping, pprint_indent=self.pprint_indent, pprint_width=self.pprint_width, pprint_depth=self.pprint_depth)
+        DD = DictionaryDifferences(
+            old_dictionary=mapping,
+            new_dictionary=new_mapping,
+            pprint_indent=self.pprint_indent,
+            pprint_width=self.pprint_width,
+            pprint_depth=self.pprint_depth)
 
         # Print the full before and after dictionaries
         if self.preview_full:
@@ -912,7 +1042,11 @@ class Mappings:
 
         # Print only the differences between the dictionaries
         if self.preview_changes:
-            DD.show_dictionary_differences(show_matching=show_matching, show_changed=show_changed, show_removed=show_removed, show_added=show_added)
+            DD.show_dictionary_differences(
+                show_matching=show_matching,
+                show_changed=show_changed,
+                show_removed=show_removed,
+                show_added=show_added)
 
         return None
 
@@ -942,17 +1076,22 @@ class Mappings:
         """
 
         if self.preview_full:
-            print("CLEAR UNMAPPED FIELDS AND RESET STATS IN UI FOR", self.event_name)
+            print(
+                "CLEAR UNMAPPED FIELDS AND RESET STATS IN UI FOR",
+                self.event_name)
 
         if self.apply_changes:
             url = self.api.rest_url + "event-types/%s/clear-stats" % self.event_name
-            response = self.api._Client__send_request(requests.delete, url, timeout=300)
+            response = self.api._Client__send_request(
+                requests.delete, url, timeout=300)
 
             if response.status_code == 204:
-                print("REMOVED UNMAPPED FIELDS AND RESET TABLE STATS IN UI", self.event_name)
+                print(
+                    "REMOVED UNMAPPED FIELDS AND RESET TABLE STATS IN UI",
+                    self.event_name)
             else:
-                raise Exception('Unable to clear stats for ' + self.event_name + ' response code is ' + str(response.status_code))
+                raise Exception(
+                    'Unable to clear stats for ' + self.event_name +
+                    ' response code is ' + str(response.status_code))
 
             return response.status_code
-
-
