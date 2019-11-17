@@ -209,16 +209,16 @@ class TestColumnDDL(unittest.TestCase):
         query_list = CD.create_ddl_statements()
 
         expected_query = """BEGIN TRANSACTION;
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE "MY_SCHEMA"."MY_TABLE"
                          RENAME COLUMN "COLUMN_ONE" TO "COLUMN_ONE_TMP";
 
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE "MY_SCHEMA"."MY_TABLE"
                            ADD COLUMN "COLUMN_ONE" INTEGER;
-                           UPDATE "MY_TABLE"."MY_SCHEMA"
+                           UPDATE "MY_SCHEMA"."MY_TABLE"
                            SET "COLUMN_ONE" = "COLUMN_ONE_TMP"::INTEGER
                            WHERE "COLUMN_ONE" IS NULL;
 
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE "MY_SCHEMA"."MY_TABLE"
                            DROP COLUMN "COLUMN_ONE_TMP" CASCADE;
                         COMMIT;"""
         self.assertEqual(re.sub(r'\W', '', expected_query), re.sub(r'\W', '', query_list))
@@ -230,16 +230,16 @@ class TestColumnDDL(unittest.TestCase):
         query_list = CD.create_ddl_statements()
 
         expected_query = """begin transaction;
-                         alter table "my_table"."my_schema"
+                         alter table "my_schema"."my_table"
                          rename column "column_one" to "column_one_tmp";
 
-                         alter table "my_table"."my_schema"
+                         alter table "my_schema"."my_table"
                            add column "column_one" integer;
-                           update "my_table"."my_schema"
+                           update "my_schema"."my_table"
                            set "column_one" = "column_one_tmp"::integer
                            where "column_one" is null;
 
-                         alter table "my_table"."my_schema"
+                         alter table "my_schema"."my_table"
                            drop column "column_one_tmp" cascade;
                         commit;"""
         self.assertEqual(re.sub(r'\W', '', expected_query), re.sub(r'\W', '', query_list))
@@ -251,16 +251,16 @@ class TestColumnDDL(unittest.TestCase):
         query_list = CD.create_ddl_statements()
 
         expected_query = """begin transaction;
-                         alter table "my_table"."my_schema"
+                         alter table "my_schema"."my_table"
                          rename column "column_one" to "column_one_tmp";
 
-                         alter table "my_table"."my_schema"
+                         alter table "my_schema"."my_table"
                            add column "column_one" varchar(16777216);
-                           update "my_table"."my_schema"
+                           update "my_schema"."my_table"
                            set "column_one" = "column_one_tmp"::varchar(16777216)
                            where "column_one" is null;
 
-                         alter table "my_table"."my_schema"
+                         alter table "my_schema"."my_table"
                            drop column "column_one_tmp" cascade;
                         commit;"""
         self.assertEqual(re.sub(r'\W', '', expected_query), re.sub(r'\W', '', query_list))
@@ -273,30 +273,30 @@ class TestColumnDDL(unittest.TestCase):
         query_list = CD.create_ddl_statements()
 
         expected_query = """BEGIN TRANSACTION;
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE "MY_SCHEMA"."MY_TABLE"
                          RENAME COLUMN "COLUMN_ONE" TO "COLUMN_ONE_TMP";
 
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE  "MY_SCHEMA"."MY_TABLE"
                            ADD COLUMN "COLUMN_ONE" INTEGER;
-                           UPDATE "MY_TABLE"."MY_SCHEMA"
+                           UPDATE  "MY_SCHEMA"."MY_TABLE"
                            SET "COLUMN_ONE" = "COLUMN_ONE_TMP"::INTEGER
                            WHERE "COLUMN_ONE" IS NULL;
 
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE "MY_SCHEMA"."MY_TABLE"
                            DROP COLUMN "COLUMN_ONE_TMP" CASCADE;
                         COMMIT;
 
                         BEGIN TRANSACTION;
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE "MY_SCHEMA"."MY_TABLE"
                          RENAME COLUMN "COLUMN_TWO" TO "COLUMN_TWO_TMP";
 
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE "MY_SCHEMA"."MY_TABLE"
                            ADD COLUMN "COLUMN_TWO" VARCHAR(16777216);
-                           UPDATE "MY_TABLE"."MY_SCHEMA"
+                           UPDATE "MY_SCHEMA"."MY_TABLE"
                            SET "COLUMN_TWO" = "COLUMN_TWO_TMP"::VARCHAR(16777216)
                            WHERE "COLUMN_TWO" IS NULL;
 
-                         ALTER TABLE "MY_TABLE"."MY_SCHEMA"
+                         ALTER TABLE "MY_SCHEMA"."MY_TABLE"
                            DROP COLUMN "COLUMN_TWO_TMP" CASCADE;
                         COMMIT;"""
         self.assertEqual(re.sub(r'\W', '', expected_query), re.sub(r'\W', '', query_list))

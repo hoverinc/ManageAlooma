@@ -116,7 +116,7 @@ class ColumnDDL:
                     column_data_type_no_char_count = column_data_type
 
             if self.change_type == 'data_type':
-                query = self.change_column_data_type(schema_name, table_name, column_name, new_column_type=column_data_type, new_column_type_no_count=column_data_type_no_char_count)
+                query = self.change_column_data_type(schema_name=schema_name, table_name=table_name, column_name=column_name, new_column_type=column_data_type, new_column_type_no_count=column_data_type_no_char_count)
             if self.change_type == 'drop':
                 query = self.drop_column(schema_name=schema_name, table_name=table_name, column_to_drop=column_name)
             if self.change_type == 'add':
@@ -208,7 +208,7 @@ class ColumnDDL:
 
         return query
 
-    def change_column_data_type(self, table_name, schema_name, column_name, new_column_type, new_column_type_no_count):
+    def change_column_data_type(self, schema_name, table_name, column_name, new_column_type, new_column_type_no_count):
         """ Prints the DB DDL statement for a single column
 
         :param schema_name: The name of the schema
