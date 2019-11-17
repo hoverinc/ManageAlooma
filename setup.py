@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='managealooma',
-    version='0.1.12',
+    version='0.1.13',
     author='Jay Rosenthal',
     author_email='jay.rosenthal@hover.to',
     packages=['managealooma'],
