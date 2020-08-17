@@ -14,7 +14,6 @@ setup(
     zip_safe=False,
     install_requires=[
         "alooma>=0.4.15",
-        "pprint>=0.1",
         "requests>=2.21.0",
         "tabulate>=0.8.3",
         "pandas>=0.23.4",
